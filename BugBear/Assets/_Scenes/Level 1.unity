@@ -915,6 +915,7 @@ MonoBehaviour:
     xMax: 6
     zMin: -4
     zMax: 8
+  bugbearSpeed: 5
   shot: {fileID: 7607788850161905312, guid: 44304213d52f91c46a53658469422a1f, type: 3}
   shotSpawn: {fileID: 1197750746}
   fireRate: 0.25
@@ -1020,6 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413a34357cb6cf347a328840dee1d3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
 --- !u!1 &2116845010
 GameObject:
   m_ObjectHideFlags: 0

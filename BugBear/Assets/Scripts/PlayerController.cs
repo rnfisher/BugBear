@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public Boundary boundary;
+    public float bugbearSpeed;
 
     public GameObject shot;
     public Transform shotSpawn;
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
         if(moveJoystick.InputDirection != Vector3.zero)
         {
-            GetComponent<Rigidbody>().position = moveJoystick.InputDirection;
+            GetComponent<Rigidbody>().velocity = moveJoystick.InputDirection * bugbearSpeed;   
         }
     }
 }
