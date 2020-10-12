@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
        if (Input.GetButton("Fire1") && Time.time > nextFire) //fireRate value adjusts shots per second
         {
             nextFire = Time.time + fireRate; 
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);  //instantiates a Shot in front of the player on button press
+            Instantiate(shot, shotSpawn.position, Quaternion.identity);  //instantiates a Shot in front of the player on button press
         }
     }
 
