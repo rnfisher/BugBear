@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Experimental.XR;
 
@@ -13,16 +15,19 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public Boundary boundary;
+    public float bugbearSpeed;
 
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
 
+    public VirtualJoystick moveJoystick;
+
     private float nextFire;
 
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire) //fireRate value adjusts shots per second
+       if (Input.GetButton("Fire1") && Time.time > nextFire) //fireRate value adjusts shots per second
         {
             nextFire = Time.time + fireRate; 
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);  //instantiates a Shot in front of the player on button press
@@ -38,11 +43,15 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody>().velocity = movement * speed;
 
         GetComponent<Rigidbody>().position = new Vector3
-            (
+        (
             Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
             0.0f,
             Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
-            );
+        );
 
+        if(moveJoystick.InputDirection != Vector3.zero)
+        {
+            GetComponent<Rigidbody>().velocity = moveJoystick.InputDirection * bugbearSpeed;   
+        }
     }
 }
