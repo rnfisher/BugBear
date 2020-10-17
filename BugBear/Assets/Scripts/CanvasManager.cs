@@ -29,7 +29,6 @@ namespace Player
             //UnlockScreen();
             Screen.SetResolution(1920, 1080, true);
             currentScene = SceneManager.GetActiveScene().name;
-            pauseBtn.SetActive(false);
         }
 
         void Update()
