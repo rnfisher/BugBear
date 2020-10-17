@@ -27,7 +27,7 @@ namespace Player
         {
             GameIsPaused = false;
             //UnlockScreen();
-            Screen.SetResolution(1920, 1080, true);
+            //Screen.SetResolution(1920, 1080, true);
             currentScene = SceneManager.GetActiveScene().name;
         }
 
