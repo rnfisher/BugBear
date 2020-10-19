@@ -14,9 +14,12 @@ namespace Player
         public GameObject joystick;
         public Button pauseBtn;
         public Button fireBtn;
+        public Text ScoreText;
         [HideInInspector] private string currentScene;
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool GameIsPaused;
+
+        private int score;
 
         private void Awake()
         {
@@ -29,6 +32,8 @@ namespace Player
             //UnlockScreen();
             //Screen.SetResolution(1920, 1080, true);
             currentScene = SceneManager.GetActiveScene().name;
+            score = 0;
+            UpdateScore();
         }
 
         void Update()
@@ -106,6 +111,15 @@ namespace Player
                 default:
                     break;
             }
+        }
+        public void AddScore(int newScoreValue)
+        {
+            score += newScoreValue;
+            UpdateScore();
+        }
+        void UpdateScore()
+        {
+            ScoreText.text = "Score: " + score;
         }
     }
 }
