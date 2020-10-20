@@ -14,6 +14,14 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
+        else if (other.tag == "Projectile")
+        {
+            return;
+        }
+        else if (other.tag == "Boundary")
+        {
+            return;
+        }
         Destroy(other.gameObject);
         Destroy(gameObject);
     }
