@@ -236,7 +236,6 @@ GameObject:
   m_Component:
   - component: {fileID: 668188038177024520}
   - component: {fileID: 668188038177024521}
-  - component: {fileID: 668188038177024518}
   m_Layer: 5
   m_Name: Health bar
   m_TagString: Untagged
@@ -317,19 +316,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &668188038177024518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668188038177024523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413a34357cb6cf347a328840dee1d3ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
 --- !u!1 &668188038478443885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1421,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 668188039493290316}
   optionsMenu: {fileID: 1102530884023782575}
   healthBar: {fileID: 668188038177024523}
+  slider: {fileID: 668188038177024521}
   joystick: {fileID: 668188038939606501}
   pauseBtn: {fileID: 668188040244615107}
   fireBtn: {fileID: 7621667919404015725}

@@ -12,6 +12,7 @@ namespace Player
         public GameObject pauseMenu;
         public GameObject optionsMenu;
         public GameObject healthBar;
+        public Slider slider;
         public GameObject joystick;
         public Button pauseBtn;
         public Button fireBtn;
@@ -120,6 +121,17 @@ namespace Player
         void UpdateScore()
         {
             ScoreText.text = "Score: " + score;
+        }
+
+        public void SetMaxHealth(int health)
+        {
+            slider.maxValue = health;
+            slider.value = health;
+        }
+
+        public void SetHealth(int health)
+        {
+            slider.value = health;
         }
     }
 }
