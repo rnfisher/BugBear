@@ -1,14 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DestroyByContact : MonoBehaviour
 {
+    /*void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        //if (gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Hit Player");
+        }
+    }*/
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Boundary")
+        if (other.tag == "Player")
         {
-            return;
+            Debug.Log(other);
+            //return;
         }
         else if (other.tag == "Collectible")
         {
@@ -22,7 +33,7 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
-        Debug.Log("TEST");
+       
         Destroy(other.gameObject);
         Destroy(gameObject);
         
