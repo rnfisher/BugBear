@@ -1426,6 +1426,7 @@ MonoBehaviour:
   pauseBtn: {fileID: 668188040244615107}
   fireBtn: {fileID: 7621667919404015725}
   ScoreText: {fileID: 138114216}
+  healthDepleteSpeed: 1
   GameIsPaused: 0
 --- !u!1 &668188039721479318
 GameObject:

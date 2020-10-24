@@ -17,6 +17,7 @@ namespace Player
         public Button pauseBtn;
         public Button fireBtn;
         public Text ScoreText;
+        public float healthDepleteSpeed;
         [HideInInspector] private string currentScene;
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool GameIsPaused;
@@ -43,6 +44,8 @@ namespace Player
             {
                 print("space key was pressed");
             }*/
+
+            slider.value = healthDepleteSpeed;
         }
 
         public void LockScreen()
