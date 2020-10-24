@@ -1,31 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class DestroyByContact : MonoBehaviour
 {
-    /*void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
-        //if (gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Hit Player");
-        }
-    }*/
 
-    private void OnTriggerEnter(Collider other)
+    public int scoreValue;
+    private GameController gameController;
+
+    void Start()
     {
-        if (other.tag == "Player")
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController"); //This section is to detect if the object that collides with this script also has the 'GameController' script
+        if (gameController != null)                                                 //And apply the values associated with that script.
         {
-            Debug.Log(other);
-            //return;
+            gameController = gameControllerObject.GetComponent<GameController>();
         }
-        else if (other.tag == "Collectible")
+        if (gameController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Boundary")
         {
             return;
         }
-        else if (other.tag == "Projectile")
+        else if (other.tag == "Enemy")
+        {
+            return;
+        }
+        else if (other.tag == "Collectible")
         {
             return;
         }
@@ -33,9 +38,9 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
-       
         Destroy(other.gameObject);
         Destroy(gameObject);
+        gameController.AddScore(scoreValue); //add score when destroyed
         
     }
 }
