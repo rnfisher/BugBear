@@ -23,11 +23,15 @@ namespace Player
         public float fireRate;
         public VirtualJoystick moveJoystick;
         private float nextFire;
-        AudioSource audioData;
 
         private void Awake()
         {
             instance = this;
+        }
+
+        void Update()
+        {
+
         }
 
         void FixedUpdate()
@@ -57,7 +61,6 @@ namespace Player
             {
                 nextFire = Time.time + fireRate;
                 Instantiate(shot, shotSpawn.position, Quaternion.identity);  //instantiates a Shot in front of the player on button press
-                GetComponent<AudioSource>().Play ();
             }
         }
     }
