@@ -17,11 +17,14 @@ namespace Player
         public Button pauseBtn;
         public Button fireBtn;
         public Text ScoreText;
-        public float healthDepleteSpeed;
+        //private float timerValue;
         [HideInInspector] private string currentScene;
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool GameIsPaused;
         private int score;
+        private float counterTimer;
+        public float updateAmountHealth = 1; //Amount that the health declines
+        public float counterTimerMax = 0.2f;
 
         private void Awake()
         {
@@ -36,6 +39,7 @@ namespace Player
             currentScene = SceneManager.GetActiveScene().name;
             score = 0;
             UpdateScore();
+            //DrainHealth();
         }
 
         void Update()
@@ -44,8 +48,27 @@ namespace Player
             {
                 print("space key was pressed");
             }*/
+        }
 
-            slider.value = healthDepleteSpeed;
+        private void FixedUpdate()
+        {
+            //if (hurting && !inCinematic)
+            //if (hurting && !inCinematic)
+            //{
+                counterTimer -= Time.fixedDeltaTime;
+                if (counterTimer <= 0)
+                {
+                    //TakeDamage(updateAmountHealth, false);
+                    counterTimer = counterTimerMax;
+
+                }
+
+            //}
+        }
+
+        private void LateStart()
+        {
+            counterTimer = counterTimerMax;
         }
 
         public void LockScreen()
@@ -125,6 +148,16 @@ namespace Player
         {
             ScoreText.text = "Score: " + score;
         }
+
+        /*void DrainHealth()
+        {
+            timerValue -= Time.deltaTime;
+            if (timerValue <= 0 && slider.value != 0)
+            {
+                slider.value = -healthDepleteSpeed;
+                //Debug.Log(slider.value);
+            }
+        }*/
 
         public void SetMaxHealth(int health)
         {
