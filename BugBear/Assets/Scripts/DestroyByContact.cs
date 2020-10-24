@@ -22,7 +22,9 @@ public class DestroyByContact : MonoBehaviour
         {
             return;
         }
+        Debug.Log("TEST");
         Destroy(other.gameObject);
         Destroy(gameObject);
+        
     }
 }

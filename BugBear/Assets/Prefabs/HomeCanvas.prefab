@@ -354,7 +354,6 @@ GameObject:
   - component: {fileID: 8135870420837929416}
   - component: {fileID: 8135870420837929423}
   - component: {fileID: 4162790856413106263}
-  - component: {fileID: 223598680779119962}
   m_Layer: 5
   m_Name: HomeCanvas
   m_TagString: Untagged
@@ -445,26 +444,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &4162790856413106263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8135870420837929422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea8deee8d82fd34dbc2673c4d05ceef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
-  optionsMenu: {fileID: 0}
-  healthBar: {fileID: 0}
-  joystick: {fileID: 0}
-  pauseBtn: {fileID: 0}
-  fireBtn: {fileID: 0}
-  ScoreText: {fileID: 0}
-  GameIsPaused: 0
---- !u!114 &223598680779119962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
