@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 namespace Player
 {
-    public class HealthBar : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour
     {
-        public static HealthBar instance;
+        public static PlayerHealth instance;
         private float counterTimer;
         [HideInInspector] public float maxHealth = 1f;
         [HideInInspector] public float currentHealth;
@@ -18,6 +18,7 @@ namespace Player
         private float newHealthDivided;
         private float healthGainCheck;
         private float newHealthGainAmount;
+        public bool takeDamage = true;
 
         private void Awake()
         {
@@ -36,7 +37,7 @@ namespace Player
             counterTimer -= Time.fixedDeltaTime;
             if (counterTimer <= 0 && currentHealth >= 0)
             {
-                TakeDamage(healthDepletionSpeed);
+                TakeDamageOvertime(healthDepletionSpeed);
                 counterTimer = counterTimerMax;
             }
 
@@ -47,20 +48,36 @@ namespace Player
             }
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamageToggle()
         {
-            previousHealthDivided = currentHealth / maxHealth;
-            currentHealth -= damage;
-            newHealthDivided = currentHealth / maxHealth;
-            healthBar.value = currentHealth;
+            takeDamage = !takeDamage;
+        }
 
-            if (healthBar.value == 0)
+        public void TakeDamageOvertime(float damage)
+        {
+            if (takeDamage)
             {
-                Debug.Log("You Died!");
-                //FindObjectOfType<CanvasManager>().GameOver();
-            }
+                previousHealthDivided = currentHealth / maxHealth;
+                currentHealth -= damage;
+                newHealthDivided = currentHealth / maxHealth;
+                healthBar.value = currentHealth;
 
-            healthBar.value = Mathf.Lerp(previousHealthDivided, newHealthDivided, 0.1f);
+                if (healthBar.value == 0)
+                {
+                    CanvasManager.instance.LoadSceneByName("Home");
+                }
+
+                healthBar.value = Mathf.Lerp(previousHealthDivided, newHealthDivided, 0.1f);
+            }
+        }
+
+        public void TakeDamage(float take)
+        {
+            if (healthBar.value > 0)
+            {
+                currentHealth -= take;
+                healthBar.value = currentHealth;
+            }
         }
 
         public void GainHealth(float gain)
