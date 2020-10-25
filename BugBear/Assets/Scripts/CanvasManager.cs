@@ -11,7 +11,7 @@ namespace Player
         public static CanvasManager instance;
         public GameObject pauseMenu;
         public GameObject optionsMenu;
-        public GameObject healthBar;
+        public GameObject bugBearHealth;
         
         public GameObject joystick;
         public Button pauseBtn;
@@ -52,7 +52,7 @@ namespace Player
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Time.timeScale = 0f;
-
+            PlayerHealth.instance.TakeDamageToggle();
         }
 
         public void UnlockScreen()
@@ -60,6 +60,7 @@ namespace Player
             //Cursor.lockState = CursorLockMode.Locked;
             //Cursor.visible = false;
             Time.timeScale = 1f;
+            PlayerHealth.instance.TakeDamageToggle();
         }
 
         public void Pause()

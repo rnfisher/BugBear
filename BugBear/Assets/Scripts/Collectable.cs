@@ -29,7 +29,7 @@ namespace Player
             {
                 //anim.SetTrigger("");
                 CanvasManager.instance.AddScore(foodPointGain);
-                HealthBar.instance.GainHealth(foodHealthGain);
+                PlayerHealth.instance.GainHealth(foodHealthGain);
                 Destroy(gameObject);
             }
         }
