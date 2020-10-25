@@ -12,7 +12,7 @@ namespace Player
         public GameObject pauseMenu;
         public GameObject optionsMenu;
         public GameObject healthBar;
-        public Slider slider;
+        
         public GameObject joystick;
         public Button pauseBtn;
         public Button fireBtn;
@@ -22,9 +22,7 @@ namespace Player
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool GameIsPaused;
         private int score;
-        private float counterTimer;
-        public float updateAmountHealth = 1; //Amount that the health declines
-        public float counterTimerMax = 0.2f;
+        
 
         private void Awake()
         {
@@ -39,7 +37,6 @@ namespace Player
             currentScene = SceneManager.GetActiveScene().name;
             score = 0;
             UpdateScore();
-            //DrainHealth();
         }
 
         void Update()
@@ -48,27 +45,6 @@ namespace Player
             {
                 print("space key was pressed");
             }*/
-        }
-
-        private void FixedUpdate()
-        {
-            //if (hurting && !inCinematic)
-            //if (hurting && !inCinematic)
-            //{
-                counterTimer -= Time.fixedDeltaTime;
-                if (counterTimer <= 0)
-                {
-                    //TakeDamage(updateAmountHealth, false);
-                    counterTimer = counterTimerMax;
-
-                }
-
-            //}
-        }
-
-        private void LateStart()
-        {
-            counterTimer = counterTimerMax;
         }
 
         public void LockScreen()
@@ -147,27 +123,6 @@ namespace Player
         void UpdateScore()
         {
             ScoreText.text = "Score: " + score;
-        }
-
-        /*void DrainHealth()
-        {
-            timerValue -= Time.deltaTime;
-            if (timerValue <= 0 && slider.value != 0)
-            {
-                slider.value = -healthDepleteSpeed;
-                //Debug.Log(slider.value);
-            }
-        }*/
-
-        public void SetMaxHealth(int health)
-        {
-            slider.maxValue = health;
-            slider.value = health;
-        }
-
-        public void SetHealth(int health)
-        {
-            slider.value = health;
         }
     }
 }
