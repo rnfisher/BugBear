@@ -311,9 +311,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 668188039344645870}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -329,8 +329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffe647afb1bbf445abaa2ac88c9dbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateAmountHealth: 1
+  maxHealth: 1
+  currentHealth: 0
+  healthDepletionSpeed: 0.003
   counterTimerMax: 0.2
+  healthBar: {fileID: 668188038177024521}
 --- !u!1 &668188038478443885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 11.8, y: -4.2}
+  m_AnchoredPosition: {x: 11.800018, y: -4.200001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &668188039344645868

@@ -9,6 +9,8 @@ namespace Player
         private string tagName;
         [SerializeField] private Animator anim;
         public static Collectable instance;
+        public float foodHealthGain = 0.03f;
+        public int foodPointGain = 1;
 
         private void Awake()
         {
@@ -26,14 +28,10 @@ namespace Player
             if (other.tag == "Player")
             {
                 //anim.SetTrigger("");
-                CanvasManager.instance.AddScore(1);
+                CanvasManager.instance.AddScore(foodPointGain);
+                HealthBar.instance.GainHealth(foodHealthGain);
                 Destroy(gameObject);
             }
-        }
-
-        private void IncreaseHealth()
-        {
-
         }
     }
 }
