@@ -334,6 +334,7 @@ MonoBehaviour:
   healthDepletionSpeed: 0.003
   counterTimerMax: 0.2
   healthBar: {fileID: 668188038177024521}
+  takeDamage: 1
 --- !u!1 &668188038478443885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 668188039493290316}
   optionsMenu: {fileID: 1102530884023782575}
-  healthBar: {fileID: 668188038177024523}
+  bugBearHealth: {fileID: 668188038177024523}
   joystick: {fileID: 668188038939606501}
   pauseBtn: {fileID: 668188040244615107}
   fireBtn: {fileID: 7621667919404015725}
