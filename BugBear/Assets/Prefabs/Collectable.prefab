@@ -192,5 +192,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  foodHealthGain: 0.2
+  foodHealthGain: 0.3
   foodPointGain: 1

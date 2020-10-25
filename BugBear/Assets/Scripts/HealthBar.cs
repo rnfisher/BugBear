@@ -43,7 +43,7 @@ namespace Player
             if (Input.GetKeyDown("space"))
             {
                 print("space key was pressed");
-                GainHealth(0.2f);
+                GainHealth(0.3f);
             }
         }
 
