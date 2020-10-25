@@ -18,7 +18,7 @@ namespace Player
         // Start is called before the first frame update
         void Start()
         {
-            tagName = this.gameObject.tag;
+            tagName = this.gameObject.tag; // Use this to determine if this is food or other tag
         }
 
         private void OnTriggerEnter(Collider other)
