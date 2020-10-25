@@ -247,12 +247,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206e86df5b8fe034397bd4264e8e77d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 6465145990485023178, guid: 212c051323b7b5541adb161cae6fb0ea, type: 3}
-  spawnValues: {x: 5, y: 0, z: 16}
-  hazardCount: 5
-  spawnWait: 1
-  startWait: 5
-  waveWait: 10
+  enemy: {fileID: 6465145990485023178, guid: 212c051323b7b5541adb161cae6fb0ea, type: 3}
+  food: {fileID: 5370757411914602862, guid: 69772670a3b012a4f8f4f0b4db4a7df8, type: 3}
+  enemySpawnValues: {x: 5, y: 0, z: 16}
+  foodSpawnValues: {x: 5, y: 0, z: 16}
+  enemyCount: 5
+  foodCount: 10
+  enemySpawnWait: 1.5
+  enemyStartWait: 10
+  enemyWaveWait: 5
+  foodSpawnWait: 3
+  foodStartWait: 3
+  foodWaveWait: 2
   scoreText: {fileID: 1544308141}
 --- !u!4 &110231046
 Transform:
@@ -951,7 +957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1594727089
 MonoBehaviour:
   m_ObjectHideFlags: 0
