@@ -70,20 +70,16 @@ namespace Player
 
             if (healthBar.value < maxHealth)
             {
-                if (healthGainCheck <= gain)
+                if (healthGainCheck < gain)
                 {
-                    newHealthGainAmount = gain - healthGainCheck;
+                    newHealthGainAmount = healthGainCheck;
                     currentHealth += newHealthGainAmount;
-                    Debug.Log("newHealthGainAmount: " + newHealthGainAmount);
                 }
                 else
                 {
                     currentHealth += gain;
-                    Debug.Log("currentHealth: " + currentHealth);
                 }
-                //currentHealth += gain;
-                healthBar.value = currentHealth;
-                
+                healthBar.value = currentHealth;  
             }
         }
     }
