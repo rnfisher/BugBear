@@ -7,6 +7,8 @@ TagManager:
   - Collectible
   - Boundary
   - Enemy
+  - Projectile
+  - PowerUp
   layers:
   - Default
   - TransparentFX

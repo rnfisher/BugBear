@@ -194,3 +194,4 @@ MonoBehaviour:
   anim: {fileID: 0}
   foodHealthGain: 0.3
   foodPointGain: 1
+  scoreValue: 5

@@ -30,6 +30,7 @@ namespace Player
             {
                 PlayerHealth.instance.TakeDamage(0.1f);
                 Debug.Log("Hit");
+                
             }
             else if (other.tag == "Boundary")
             {
@@ -51,9 +52,15 @@ namespace Player
             {
                 return;
             }
-            gameController.AddScore(scoreValue); //add score when destroyed
-            //Destroy(other.gameObject);
-            Destroy(gameObject);
+            else if (other.tag == "Projectile")
+            {
+                Debug.Log("Projectile Hit");
+                gameController.AddScore(scoreValue); //add score when hitting this object
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+                return;
+            }
+            Destroy(gameObject); //If this hits anything unspecified, it will destroy itself
 
         }
     }

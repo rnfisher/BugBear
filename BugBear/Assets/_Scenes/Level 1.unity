@@ -254,7 +254,7 @@ MonoBehaviour:
   enemyCount: 5
   foodCount: 10
   enemySpawnWait: 1.5
-  enemyStartWait: 10
+  enemyStartWait: 5
   enemyWaveWait: 5
   foodSpawnWait: 3
   foodStartWait: 3
