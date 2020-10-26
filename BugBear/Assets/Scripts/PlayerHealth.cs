@@ -62,7 +62,7 @@ namespace Player
                 newHealthDivided = currentHealth / maxHealth;
                 healthBar.value = currentHealth;
 
-                if (healthBar.value == 0)
+                if (healthBar.value <= 0)
                 {
                     CanvasManager.instance.LoadSceneByName("Home");
                 }
