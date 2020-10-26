@@ -31,26 +31,28 @@ public class GameController : MonoBehaviour
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(enemyStartWait);
+        yield return new WaitForSeconds(foodStartWait);
         while (true)
         {
-            for (int i = 0, j = 0; i < enemyCount; i++,j++)
+            for (int i = 0, j = 0; i < enemyCount; i++)
             {
                 Vector3 spawnPosition = new Vector3(Random.Range(-enemySpawnValues.x, enemySpawnValues.x), enemySpawnValues.y, enemySpawnValues.z); //For 'x' the script will chose random numbers between x and -x
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(enemy, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(enemySpawnWait);
+                yield return new WaitForSeconds(enemySpawnWait);                    //Spawn Enemy
+
+
+                Vector3 foodspawnPosition = new Vector3(Random.Range(-foodSpawnValues.x, foodSpawnValues.x), foodSpawnValues.y, foodSpawnValues.z);
+                Quaternion foodspawnRotation = Quaternion.identity;
+                Instantiate(food, foodspawnPosition, foodspawnRotation);
+                yield return new WaitForSeconds(foodSpawnWait);                     //Spawn Food
             }
             yield return new WaitForSeconds(enemyWaveWait);
+            yield return new WaitForSeconds(foodWaveWait);                          //Wait
 
-            for (int i = 0; i < foodCount; i++)
-            {
-                Vector3 spawnPosition = new Vector3(Random.Range(-foodSpawnValues.x, foodSpawnValues.x), foodSpawnValues.y, foodSpawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(food, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(foodSpawnWait);
-            }
-            yield return new WaitForSeconds(foodWaveWait);
+           
         }
+
     }
 
     public void AddScore(int newScoreValue)
