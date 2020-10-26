@@ -251,14 +251,14 @@ MonoBehaviour:
   food: {fileID: 5370757411914602862, guid: 69772670a3b012a4f8f4f0b4db4a7df8, type: 3}
   enemySpawnValues: {x: 5, y: 0, z: 16}
   foodSpawnValues: {x: 5, y: 0, z: 16}
-  enemyCount: 5
-  foodCount: 10
-  enemySpawnWait: 1.5
-  enemyStartWait: 5
-  enemyWaveWait: 5
-  foodSpawnWait: 3
-  foodStartWait: 3
-  foodWaveWait: 2
+  enemyCount: 15
+  foodCount: 5
+  enemySpawnWait: 0.1
+  enemyStartWait: 3
+  enemyWaveWait: 1.5
+  foodSpawnWait: 5
+  foodStartWait: 0.1
+  foodWaveWait: 8
   scoreText: {fileID: 1544308141}
 --- !u!4 &110231046
 Transform:
