@@ -35,16 +35,10 @@ namespace Player
         private void Update()
         {
             counterTimer -= Time.fixedDeltaTime;
-            if (counterTimer <= 0 && currentHealth >= 0)
+            if (counterTimer <= 0)
             {
                 TakeDamageOvertime(healthDepletionSpeed);
                 counterTimer = counterTimerMax;
-            }
-
-            if (Input.GetKeyDown("space"))
-            {
-                print("space key was pressed");
-                GainHealth(0.3f);
             }
         }
 
@@ -64,8 +58,7 @@ namespace Player
 
                 if (healthBar.value <= 0)
                 {
-                    CanvasManager.instance.LoadSceneByName("Home");
-                    //Debug.Log(healthBar.value);
+                    CanvasManager.instance.Death();
                 }
 
                 healthBar.value = Mathf.Lerp(previousHealthDivided, newHealthDivided, 0.1f);

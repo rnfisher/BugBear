@@ -10,6 +10,7 @@ namespace Player
     {
         public static CanvasManager instance;
         public GameObject pauseMenu;
+        public GameObject deathMenu;
         public GameObject optionsMenu;
         public GameObject bugBearHealth;
         
@@ -17,8 +18,6 @@ namespace Player
         public Button pauseBtn;
         public Button fireBtn;
         public Text ScoreText;
-        //private float timerValue;
-        [HideInInspector] private string currentScene;
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool gameIsPaused;
         private int score;
@@ -32,9 +31,6 @@ namespace Player
         void Start()
         {
             gameIsPaused = false;
-            //UnlockScreen();
-            //Screen.SetResolution(1920, 1080, true);
-            currentScene = SceneManager.GetActiveScene().name;
             score = 0;
             UpdateScore();
         }
@@ -77,6 +73,17 @@ namespace Player
                 pauseMenu.SetActive(true);
                 LockScreen();
             }
+        }
+
+        public void Death()
+        {
+            deathMenu.SetActive(true);
+            Pause();
+        }
+
+        public void ReplayLevel()
+        {
+            PlayerRespawn.instance.Respawn();
         }
 
         public void Resume()
