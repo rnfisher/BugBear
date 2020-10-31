@@ -65,6 +65,7 @@ namespace Player
                 if (healthBar.value <= 0)
                 {
                     CanvasManager.instance.LoadSceneByName("Home");
+                    //Debug.Log(healthBar.value);
                 }
 
                 healthBar.value = Mathf.Lerp(previousHealthDivided, newHealthDivided, 0.1f);

@@ -20,7 +20,7 @@ namespace Player
         //private float timerValue;
         [HideInInspector] private string currentScene;
         [HideInInspector] public static string nextScene;
-        [HideInInspector] public bool GameIsPaused;
+        [HideInInspector] public bool gameIsPaused;
         private int score;
         
 
@@ -31,7 +31,7 @@ namespace Player
 
         void Start()
         {
-            GameIsPaused = false;
+            gameIsPaused = false;
             //UnlockScreen();
             //Screen.SetResolution(1920, 1080, true);
             currentScene = SceneManager.GetActiveScene().name;
@@ -65,13 +65,23 @@ namespace Player
 
         public void Pause()
         {
-            pauseMenu.SetActive(true);
-            LockScreen();
+            if (gameIsPaused)
+            {
+                gameIsPaused = false;
+                pauseMenu.SetActive(false);
+                UnlockScreen();
+            }
+            else
+            {
+                gameIsPaused = true;
+                pauseMenu.SetActive(true);
+                LockScreen();
+            }
         }
 
         public void Resume()
         {
-            GameIsPaused = false;
+            gameIsPaused = false;
             pauseMenu.SetActive(false);
             UnlockScreen();
         }
