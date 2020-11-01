@@ -125,7 +125,14 @@ namespace Player
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     break;
+                case "Level Select":
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    break;
                 case "Level 1":
+
+                    break;
+                case "Level 2":
 
                     break;
                 default:
