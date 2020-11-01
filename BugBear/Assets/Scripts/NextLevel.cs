@@ -9,7 +9,11 @@ namespace Player
     public class NextLevel : MonoBehaviour
     {
         private string nextScene;
+        private int score;
+        private int highScore;
         public Text nextSceneText;
+        public Text highScoreText;
+        public Text scoreText;
         public GameObject homeBackground;
         public GameObject lvl1Background;
         public GameObject lvl2Background;
@@ -18,7 +22,9 @@ namespace Player
         void Start()
         {
             nextScene = PlayerPrefs.GetString("NextScene");
-            SetNextLevelText();
+            score = PlayerPrefs.GetInt("Score");
+            highScore = PlayerPrefs.GetInt("HighScore");
+            
             switch (nextScene)
             {
                 case "Home":
@@ -36,11 +42,15 @@ namespace Player
                 default:
                     break;
             }
+            //GameController.instance.SetHighScore();
+            SetText();
         }
 
-        private void SetNextLevelText()
+        private void SetText()
         {
             nextSceneText.text = "Next Level: " + nextScene;
+            highScoreText.text = "High Score: " + highScore;
+            scoreText.text = "Current Score: " + score;
         }
 
         public void GoToNextLevel()

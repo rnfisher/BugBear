@@ -59,7 +59,7 @@ namespace Player
                 if (healthBar.value <= 0)
                 {
                     CanvasManager.instance.Death();
-                    // Should call SetHighScore() in GameController script
+                    //GameController.instance.SetHighScore();
                 }
 
                 healthBar.value = Mathf.Lerp(previousHealthDivided, newHealthDivided, 0.1f);

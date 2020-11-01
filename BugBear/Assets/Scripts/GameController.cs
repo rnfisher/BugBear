@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 namespace Player
 {
@@ -37,8 +38,7 @@ namespace Player
         public bool isScoreTextAvailable = true;
         public Text scoreText;
         private int score;
-        public int previousHighScore;
-        public int currentHighScore;
+        public int highScore;
         public int neededPointsLvl1 = 10;
         public int neededPointsLvl2 = 20;
         public int neededPointsLvl3 = 30;
@@ -51,7 +51,7 @@ namespace Player
         void Start()
         {
             score = PlayerPrefs.GetInt("Score");
-            //currentScene = PlayerPrefs.GetString("Scene");
+            highScore = PlayerPrefs.GetInt("HighScore");
             currentScene = SceneManager.GetActiveScene().name;
             UpdateScore();
             SetNextScene();
@@ -66,6 +66,7 @@ namespace Player
             if (Input.GetKeyDown(KeyCode.C))
             {
                 ClearScore();
+                ClearHighScore();
             }
         }
 
@@ -147,6 +148,7 @@ namespace Player
             score += newScoreValue;
             UpdateScore();
             NextLevelCheck();
+            SetHighScore();
         }
 
         private void UpdateScore()
@@ -158,24 +160,19 @@ namespace Player
         {
             if (score == neededPointsLvl1 && currentScene == "Level 1")
             {
-                SetScore();
+                PlayerPrefs.SetInt("Score", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (score == neededPointsLvl2 && currentScene == "Level 2")
             {
-                SetScore();
+                PlayerPrefs.SetInt("Score", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (score == neededPointsLvl3 && currentScene == "Level 3")
             {
-                SetScore();
+                PlayerPrefs.SetInt("Score", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
-        }
-
-        public void SetScore()
-        {
-            PlayerPrefs.SetInt("Score", score);
         }
 
         public void ClearScore()
@@ -186,6 +183,11 @@ namespace Player
             {
                 scoreText.text = "Score: " + score;
             }
+        }
+
+        public void ClearHighScore()
+        {
+            PlayerPrefs.SetInt("HighScore", 0);
         }
 
         public void ScoreTextAvailable() // Prevents Error when going to LvlTransition scene to Home screen
@@ -214,7 +216,10 @@ namespace Player
 
         public void SetHighScore()
         {
-
+            if (score >= highScore)
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
         }
     }
 }
