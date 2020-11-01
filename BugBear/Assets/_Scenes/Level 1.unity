@@ -251,14 +251,14 @@ MonoBehaviour:
   food: {fileID: 5370757411914602862, guid: 69772670a3b012a4f8f4f0b4db4a7df8, type: 3}
   enemySpawnValues: {x: 5, y: 0, z: 16}
   foodSpawnValues: {x: 5, y: 0, z: 16}
-  enemyCount: 15
-  foodCount: 5
-  enemySpawnWait: 0.1
-  enemyStartWait: 3
-  enemyWaveWait: 1.5
-  foodSpawnWait: 5
-  foodStartWait: 0.1
-  foodWaveWait: 8
+  enemyCount: 10
+  foodCount: 2
+  enemySpawnWait: 0.5
+  enemyStartWait: 1
+  enemyWaveWait: 1
+  foodSpawnWait: 1.5
+  foodStartWait: 2
+  foodWaveWait: 3.5
   scoreText: {fileID: 1544308141}
 --- !u!4 &110231046
 Transform:
@@ -283,7 +283,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 133305564}
-  - component: {fileID: 133305563}
   m_Layer: 0
   m_Name: EnemySpawn
   m_TagString: Untagged
@@ -291,23 +290,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &133305563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133305562}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 009cdf2f41d8aaf489a95dcef42b83b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 6465145990485023178, guid: 212c051323b7b5541adb161cae6fb0ea, type: 3}
-  enemySpawnPos: {fileID: 133305564}
-  spawnRate: 3
-  negValue: -5
-  posValue: 5
 --- !u!4 &133305564
 Transform:
   m_ObjectHideFlags: 0
@@ -993,7 +975,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594727090}
-  - component: {fileID: 1594727089}
   m_Layer: 0
   m_Name: FoodSpawn
   m_TagString: Untagged
@@ -1001,23 +982,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1594727089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594727088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 394c717a30df2714fa2b7c061f067d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  food: {fileID: 5370757411914602862, guid: 69772670a3b012a4f8f4f0b4db4a7df8, type: 3}
-  foodSpawnPos: {fileID: 1594727090}
-  spawnRate: 2
-  negValue: -5
-  posValue: 5
 --- !u!4 &1594727090
 Transform:
   m_ObjectHideFlags: 0

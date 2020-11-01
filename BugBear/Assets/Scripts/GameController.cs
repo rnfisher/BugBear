@@ -25,13 +25,13 @@ public class GameController : MonoBehaviour
     {
         score = 0;
         UpdateScore();
-        StartCoroutine(SpawnWaves());
+        StartCoroutine(SpawnEnemyWaves());
+        StartCoroutine(SpawnFoodWaves());
     }
 
-    IEnumerator SpawnWaves()
+    IEnumerator SpawnEnemyWaves()
     {
         yield return new WaitForSeconds(enemyStartWait);
-        yield return new WaitForSeconds(foodStartWait);
         while (true)
         {
             for (int i = 0, j = 0; i < enemyCount; i++)
@@ -39,18 +39,29 @@ public class GameController : MonoBehaviour
                 Vector3 spawnPosition = new Vector3(Random.Range(-enemySpawnValues.x, enemySpawnValues.x), enemySpawnValues.y, enemySpawnValues.z); //For 'x' the script will chose random numbers between x and -x
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(enemy, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(enemySpawnWait);                    //Spawn Enemy
+                yield return new WaitForSeconds(enemySpawnWait);
+            }
+            //Spawn Enemy
+            yield return new WaitForSeconds(enemyWaveWait);
+            //Wait
+        }
 
-
+    }
+    IEnumerator SpawnFoodWaves()
+    {
+        yield return new WaitForSeconds(foodStartWait);
+        while (true)
+        {
+            for (int i = 0, j = 0; i < foodCount; i++)
+            {
                 Vector3 foodspawnPosition = new Vector3(Random.Range(-foodSpawnValues.x, foodSpawnValues.x), foodSpawnValues.y, foodSpawnValues.z);
                 Quaternion foodspawnRotation = Quaternion.identity;
                 Instantiate(food, foodspawnPosition, foodspawnRotation);
-                yield return new WaitForSeconds(foodSpawnWait);                     //Spawn Food
+                yield return new WaitForSeconds(foodSpawnWait);
             }
-            yield return new WaitForSeconds(enemyWaveWait);
-            yield return new WaitForSeconds(foodWaveWait);                          //Wait
-
-           
+            //Spawn Food
+            yield return new WaitForSeconds(foodWaveWait);
+            //Wait
         }
 
     }
