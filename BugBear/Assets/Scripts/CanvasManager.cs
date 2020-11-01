@@ -17,10 +17,10 @@ namespace Player
         public GameObject joystick;
         public Button pauseBtn;
         public Button fireBtn;
-        public Text ScoreText;
+        //public Text ScoreText;
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool gameIsPaused;
-        private int score;
+        //private int score;
         
 
         private void Awake()
@@ -31,8 +31,8 @@ namespace Player
         void Start()
         {
             gameIsPaused = false;
-            score = 0;
-            UpdateScore();
+            //score = 0;
+            //UpdateScore();
         }
 
         void Update()
@@ -133,7 +133,7 @@ namespace Player
                     break;
             }
         }
-        public void AddScore(int newScoreValue)
+        /*public void AddScore(int newScoreValue)
         {
             score += newScoreValue;
             UpdateScore();
@@ -141,7 +141,7 @@ namespace Player
         void UpdateScore()
         {
             ScoreText.text = "Score: " + score;
-        }
+        }*/
     }
 }
 

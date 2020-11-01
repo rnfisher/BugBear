@@ -28,12 +28,12 @@ namespace Player
             GameObject gameControllerObject = GameObject.FindWithTag("GameController"); //This section is to detect if the object that collides with this script also has the 'GameController' script
             if (gameControllerObject != null)                                                 //And apply the values associated with that script.
             {
-                Debug.Log("CONTROLLER FOUND");
+                //Debug.Log("CONTROLLER FOUND");
                 gameController = gameControllerObject.GetComponent<GameController>();
             }
             if (gameControllerObject == null)
             {
-                Debug.Log("Cannot find 'GameController' script");
+                //Debug.Log("Cannot find 'GameController' script");
             }
         }
 

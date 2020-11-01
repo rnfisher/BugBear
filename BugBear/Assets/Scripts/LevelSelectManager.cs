@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour
 {
-    public static LevelSelectManager instance;
+    /*public static LevelSelectManager instance;
 
     //private float timerValue;
     [HideInInspector] private string currentScene;
@@ -81,5 +81,5 @@ public class LevelSelectManager : MonoBehaviour
             default:
                 break;
         }
-    }
+    }*/
 }
