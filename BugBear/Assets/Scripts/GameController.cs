@@ -32,11 +32,15 @@ namespace Player
         public float splitSpawnWait;
         public float splitStartWait;
         public float splitWaveWait;
+        private string playerPrefsScene;
 
         public Text scoreText;
         private int score;
-
-        public int highScore;
+        public int previousHighScore;
+        public int currentHighScore;
+        public int neededPointsLvl1 = 10;
+        public int neededPointsLvl2 = 200;
+        public int neededPointsLvl3 = 300;
 
         private void Awake()
         {
@@ -45,12 +49,18 @@ namespace Player
 
         void Start()
         {
-            score = 0;
+            score = PlayerPrefs.GetInt("Score");
+            playerPrefsScene = PlayerPrefs.GetString("Scene");
             UpdateScore();
             StartCoroutine(SpawnEnemyWaves());
             StartCoroutine(SpawnFoodWaves());
             StartCoroutine(SpawnnukeWaves());
-            StartCoroutine(SpawnsplitWaves());
+            StartCoroutine(SpawnsplitWaves()); 
+        }
+
+        void Update()
+        {
+
         }
 
         IEnumerator SpawnEnemyWaves()
@@ -130,11 +140,39 @@ namespace Player
         {
             score += newScoreValue;
             UpdateScore();
+            NextLevelCheck();
         }
 
-        void UpdateScore()
+        private void UpdateScore()
         {
             scoreText.text = "Score: " + score;
+        }
+
+        private void NextLevelCheck()
+        {
+            if (score >= neededPointsLvl1 && score < neededPointsLvl2)
+            {
+                SetScore();
+                CanvasManager.instance.LoadSceneByName("LvlTransition");
+            }
+            else if (score >= neededPointsLvl2 && score < neededPointsLvl3)
+            {
+
+            }
+            else if (score >= neededPointsLvl3)
+            {
+
+            }
+        }
+
+        public void SetScore()
+        {
+            PlayerPrefs.SetInt("Score", score);
+        }
+
+        public void SetHighScore()
+        {
+
         }
     }
 }

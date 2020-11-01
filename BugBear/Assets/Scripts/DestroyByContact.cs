@@ -16,12 +16,12 @@ namespace Player
             GameObject gameControllerObject = GameObject.FindWithTag("GameController"); //This section is to detect if the object that collides with this script also has the 'GameController' script
             if (gameControllerObject != null)                                                 //And apply the values associated with that script.
             {
-                Debug.Log("CONTROLLER FOUND");
+                //Debug.Log("CONTROLLER FOUND");
                 gameController = gameControllerObject.GetComponent<GameController>();
             }
             if (gameControllerObject == null)
             {
-                Debug.Log("Cannot find 'GameController' script");
+                //Debug.Log("Cannot find 'GameController' script");
             }
         }
         void OnTriggerEnter(Collider other)
@@ -29,7 +29,7 @@ namespace Player
             if (other.tag == "Player")
             {
                 PlayerHealth.instance.TakeDamage(0.1f);
-                Debug.Log("Hit");
+                //Debug.Log("Hit");
                 
             }
             else if (other.tag == "Boundary")
@@ -54,7 +54,7 @@ namespace Player
             }
             else if (other.tag == "Projectile")
             {
-                Debug.Log("Projectile Hit");
+                //Debug.Log("Projectile Hit");
                 gameController.AddScore(scoreValue); //add score when hitting this object
                 Destroy(other.gameObject);
                 Destroy(gameObject);
