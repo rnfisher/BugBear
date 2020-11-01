@@ -115,8 +115,8 @@ GameObject:
   - component: {fileID: 6465145990485023177}
   - component: {fileID: 6465145990485023180}
   m_Layer: 0
-  m_Name: PowerUp
-  m_TagString: PowerUp
+  m_Name: Nuke
+  m_TagString: Nuke
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

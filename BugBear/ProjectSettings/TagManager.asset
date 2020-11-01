@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Projectile
   - PowerUp
+  - Nuke
+  - Split
   layers:
   - Default
   - TransparentFX
