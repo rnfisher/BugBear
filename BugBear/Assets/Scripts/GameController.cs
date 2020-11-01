@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -32,15 +33,15 @@ namespace Player
         public float splitSpawnWait;
         public float splitStartWait;
         public float splitWaveWait;
-        private string playerPrefsScene;
-
+        private string currentScene;
+        public bool isScoreTextAvailable = true;
         public Text scoreText;
         private int score;
         public int previousHighScore;
         public int currentHighScore;
         public int neededPointsLvl1 = 10;
-        public int neededPointsLvl2 = 200;
-        public int neededPointsLvl3 = 300;
+        public int neededPointsLvl2 = 20;
+        public int neededPointsLvl3 = 30;
 
         private void Awake()
         {
@@ -50,8 +51,10 @@ namespace Player
         void Start()
         {
             score = PlayerPrefs.GetInt("Score");
-            playerPrefsScene = PlayerPrefs.GetString("Scene");
+            //currentScene = PlayerPrefs.GetString("Scene");
+            currentScene = SceneManager.GetActiveScene().name;
             UpdateScore();
+            SetNextScene();
             StartCoroutine(SpawnEnemyWaves());
             StartCoroutine(SpawnFoodWaves());
             StartCoroutine(SpawnnukeWaves());
@@ -60,7 +63,10 @@ namespace Player
 
         void Update()
         {
-
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                ClearScore();
+            }
         }
 
         IEnumerator SpawnEnemyWaves()
@@ -150,16 +156,17 @@ namespace Player
 
         private void NextLevelCheck()
         {
-            if (score >= neededPointsLvl1 && score < neededPointsLvl2)
+            if (score == neededPointsLvl1)
             {
                 SetScore();
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
-            else if (score >= neededPointsLvl2 && score < neededPointsLvl3)
+            else if (score == neededPointsLvl2)
             {
-
+                SetScore();
+                CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
-            else if (score >= neededPointsLvl3)
+            else if (score == neededPointsLvl3)
             {
 
             }
@@ -168,6 +175,40 @@ namespace Player
         public void SetScore()
         {
             PlayerPrefs.SetInt("Score", score);
+        }
+
+        public void ClearScore()
+        {
+            PlayerPrefs.SetInt("Score", 0);
+            score = 0;
+            if (isScoreTextAvailable)
+            {
+                scoreText.text = "Score: " + score;
+            }
+        }
+
+        public void ScoreTextAvailable() // Prevents Error when going to LvlTransition scene to Home screen
+        {
+            isScoreTextAvailable = false;
+        }
+
+        public void SetNextScene()
+        {
+            switch (currentScene)
+            {
+                case "Level 1":
+                    PlayerPrefs.SetString("NextScene", "Level 2");
+                    break;
+                case "Level 2":
+                    //PlayerPrefs.SetString("NextScene", "Level 3");
+                    PlayerPrefs.SetString("NextScene", "Home");
+                    break;
+                case "Level 3":
+                    PlayerPrefs.SetString("NextScene", "Home");
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void SetHighScore()
