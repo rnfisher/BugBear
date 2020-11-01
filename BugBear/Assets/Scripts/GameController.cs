@@ -156,19 +156,20 @@ namespace Player
 
         private void NextLevelCheck()
         {
-            if (score == neededPointsLvl1)
+            if (score == neededPointsLvl1 && currentScene == "Level 1")
             {
                 SetScore();
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
-            else if (score == neededPointsLvl2)
+            else if (score == neededPointsLvl2 && currentScene == "Level 2")
             {
                 SetScore();
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
-            else if (score == neededPointsLvl3)
+            else if (score == neededPointsLvl3 && currentScene == "Level 3")
             {
-
+                SetScore();
+                CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
         }
 

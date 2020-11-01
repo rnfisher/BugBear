@@ -108,6 +108,10 @@ namespace Player
         // Load Scenes by name
         public void LoadSceneByName(string sceneName)
         {
+            if (sceneName == "Home" || sceneName == "LvlSelect")
+            {
+                PlayerPrefs.SetInt("Score", 0);
+            }
             SceneManager.LoadScene(sceneName);
             Time.timeScale = 1f;
             SceneSettings(sceneName);
