@@ -24,10 +24,13 @@ namespace Player
         public VirtualJoystick moveJoystick;
         private float nextFire;
         AudioSource audioData;
+        public GameObject[] enemy;
+        public bool splitShot;
 
         private void Awake()
         {
             instance = this;
+            splitShot = false;
         }
 
         void FixedUpdate()
@@ -58,7 +61,32 @@ namespace Player
                 nextFire = Time.time + fireRate;
                 Instantiate(shot, shotSpawn.position, Quaternion.identity);  //instantiates a Shot in front of the player on button press
                 GetComponent<AudioSource>().Play ();
+                    if (splitShot == true)
+                        {
+                            Instantiate(shot, shotSpawn.position, Quaternion.Euler(new Vector3(0, 40, 0)));
+                            Instantiate(shot, shotSpawn.position, Quaternion.Euler(new Vector3(0, -40, 0)));
+                        }
             }
+
+        }
+        public void OnTriggerEnter(Collider other)
+        {
+
+            if (other.gameObject.CompareTag("Nuke"))
+            {
+                other.gameObject.SetActive(false);
+                GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+
+                for (var i = 0; i < enemy.Length; i++)
+                {
+                    Destroy(enemy[i]);
+                }
+            }
+            if (other.gameObject.CompareTag("Split"))
+            {
+                other.gameObject.SetActive(false);
+                splitShot = true;
+            } 
         }
     }
 }
