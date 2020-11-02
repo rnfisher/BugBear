@@ -271,7 +271,12 @@ MonoBehaviour:
   splitSpawnWait: 5
   splitStartWait: 5
   splitWaveWait: 4
+  isScoreTextAvailable: 1
   scoreText: {fileID: 1544308141}
+  highScore: 0
+  neededPointsLvl1: 100
+  neededPointsLvl2: 120
+  neededPointsLvl3: 300
 --- !u!4 &110231046
 Transform:
   m_ObjectHideFlags: 0

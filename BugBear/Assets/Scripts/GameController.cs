@@ -39,9 +39,9 @@ namespace Player
         public Text scoreText;
         private int score;
         public int highScore;
-        public int neededPointsLvl1 = 10;
-        public int neededPointsLvl2 = 20;
-        public int neededPointsLvl3 = 30;
+        public int neededPointsLvl1 = 100;
+        public int neededPointsLvl2 = 120;
+        public int neededPointsLvl3 = 300;
 
         private void Awake()
         {
@@ -158,17 +158,17 @@ namespace Player
 
         private void NextLevelCheck()
         {
-            if (score == neededPointsLvl1 && currentScene == "Level 1")
+            if (score >= neededPointsLvl1 && currentScene == "Level 1")
             {
                 PlayerPrefs.SetInt("Score", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
-            else if (score == neededPointsLvl2 && currentScene == "Level 2")
+            else if (score >= neededPointsLvl2 && currentScene == "Level 2")
             {
                 PlayerPrefs.SetInt("Score", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
-            else if (score == neededPointsLvl3 && currentScene == "Level 3")
+            else if (score >= neededPointsLvl3 && currentScene == "Level 3")
             {
                 PlayerPrefs.SetInt("Score", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
