@@ -11,22 +11,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2925317798902331953, guid: 781931fb357f7f64a82af7f589727725,
+      objectReference: {fileID: -2257718091853131116, guid: 39639a2e898e81d44b8f6a7790c462c0,
         type: 3}
     - target: {fileID: 4033954198903628318, guid: f1324b7eb0cb55c438b4c514e78946fd,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9d214e9215356894abc24b23fe37ade5, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6465145990485023178, guid: f1324b7eb0cb55c438b4c514e78946fd,
         type: 3}
       propertyPath: m_Name
-      value: Split
+      value: Double
       objectReference: {fileID: 0}
     - target: {fileID: 6465145990485023178, guid: f1324b7eb0cb55c438b4c514e78946fd,
         type: 3}
       propertyPath: m_TagString
-      value: Split
+      value: Double
       objectReference: {fileID: 0}
     - target: {fileID: 6465145990485023181, guid: f1324b7eb0cb55c438b4c514e78946fd,
         type: 3}
