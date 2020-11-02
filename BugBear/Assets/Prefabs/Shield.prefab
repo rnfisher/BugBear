@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 6465145990485023178, guid: f1324b7eb0cb55c438b4c514e78946fd,
         type: 3}
       propertyPath: m_TagString
-      value: Rapid
+      value: Shield
       objectReference: {fileID: 0}
     - target: {fileID: 6465145990485023181, guid: f1324b7eb0cb55c438b4c514e78946fd,
         type: 3}
