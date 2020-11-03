@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8596640243658272642, guid: 7e26b644ebbdfe5408cd8cd09c232bb2,
+  m_Sprite: {fileID: 4189423044371388980, guid: 55dc7c1fb0af9de419b907d966c33e82,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 4060775002134776732}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c752af610eac64949be3931d5eccd306, type: 2}
+  m_Controller: {fileID: 9100000, guid: 046c3e61b941eea47828a6ff0cc2d27a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -116,8 +116,8 @@ GameObject:
   - component: {fileID: 6465145990485023180}
   - component: {fileID: -8203311416709499710}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Enemy
+  m_Name: EnemySpin
+  m_TagString: EnemySpin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

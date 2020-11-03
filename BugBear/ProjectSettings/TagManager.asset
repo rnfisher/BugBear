@@ -14,6 +14,8 @@ TagManager:
   - Double
   - Shield
   - Rapid
+  - EnemyFollow
+  - EnemySpin
   layers:
   - Default
   - TransparentFX
