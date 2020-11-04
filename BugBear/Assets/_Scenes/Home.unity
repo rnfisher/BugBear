@@ -882,6 +882,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3955996225036638202, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275420368800611006, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297736453680463988, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6724023611498908926, guid: 312d4bfe84621974cb6d94eea96c6860,
         type: 3}
       propertyPath: m_Name
