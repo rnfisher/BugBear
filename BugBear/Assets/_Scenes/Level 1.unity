@@ -1101,6 +1101,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 138114214, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138114215, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -266
+      objectReference: {fileID: 0}
+    - target: {fileID: 138114215, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138114215, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138114215, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138114215, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138114215, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -87
+      objectReference: {fileID: 0}
+    - target: {fileID: 138114216, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 668188039344645870, guid: 0f02a086b54703c43a5069b267df955e,
         type: 3}
       propertyPath: m_AnchorMin.x
