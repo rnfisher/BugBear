@@ -16,6 +16,7 @@ TagManager:
   - Rapid
   - EnemyFollow
   - EnemySpin
+  - EnemyBig
   layers:
   - Default
   - TransparentFX
