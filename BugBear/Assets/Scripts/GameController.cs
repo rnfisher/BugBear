@@ -14,14 +14,17 @@ namespace Player
         public GameObject food;
         public GameObject nuke;
         public GameObject split;
+        public GameObject enemyTwo;
         public Vector3 enemySpawnValues;
         public Vector3 foodSpawnValues;
         public Vector3 nukeSpawnValues;
         public Vector3 splitSpawnValues;
+        public Vector3 enemyTwoSpawnValues;
         public int enemyCount;
         public int foodCount;
         public int nukeCount;
         public int splitCount;
+        public int enemyTwoCount;
         public float enemySpawnWait;
         public float enemyStartWait;
         public float enemyWaveWait;
@@ -34,6 +37,9 @@ namespace Player
         public float splitSpawnWait;
         public float splitStartWait;
         public float splitWaveWait;
+        public float enemyTwoSpawnWait;
+        public float enemyTwoStartWait;
+        public float enemyTwoWaveWait;
         private string currentScene;
         public bool isScoreTextAvailable = true;
         public Text scoreText;
@@ -58,7 +64,8 @@ namespace Player
             StartCoroutine(SpawnEnemyWaves());
             StartCoroutine(SpawnFoodWaves());
             StartCoroutine(SpawnnukeWaves());
-            StartCoroutine(SpawnsplitWaves()); 
+            StartCoroutine(SpawnsplitWaves());
+            StartCoroutine(SpawnEnemyTwoWaves());
         }
 
         void Update()
@@ -138,6 +145,24 @@ namespace Player
                 }
                 //Spawn Split Pickup
                 yield return new WaitForSeconds(splitWaveWait);
+                //Wait
+            }
+
+        }
+        IEnumerator SpawnEnemyTwoWaves()
+        {
+            yield return new WaitForSeconds(enemyTwoStartWait);
+            while (true)
+            {
+                for (int i = 0, j = 0; i < enemyCount; i++)
+                {
+                    Vector3 spawnPosition = new Vector3(Random.Range(-enemyTwoSpawnValues.x, enemyTwoSpawnValues.x), enemyTwoSpawnValues.y, enemyTwoSpawnValues.z); //For 'x' the script will chose random numbers between x and -x
+                    Quaternion spawnRotation = Quaternion.identity;
+                    Instantiate(enemyTwo, spawnPosition, spawnRotation);
+                    yield return new WaitForSeconds(enemyTwoSpawnWait);
+                }
+                //Spawn Enemy Two
+                yield return new WaitForSeconds(enemyTwoWaveWait);
                 //Wait
             }
 

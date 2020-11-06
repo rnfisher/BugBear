@@ -247,19 +247,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206e86df5b8fe034397bd4264e8e77d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  food: {fileID: 0}
-  enemySpawnValues: {x: 0, y: 0, z: 0}
-  foodSpawnValues: {x: 0, y: 0, z: 0}
-  enemyCount: 0
-  foodCount: 0
-  enemySpawnWait: 0
-  enemyStartWait: 0
-  enemyWaveWait: 0
-  foodSpawnWait: 0
-  foodStartWait: 0
-  foodWaveWait: 0
-  scoreText: {fileID: 1544308141}
+  enemy: {fileID: 6465145990485023178, guid: 212c051323b7b5541adb161cae6fb0ea, type: 3}
+  food: {fileID: 5370757411914602862, guid: 69772670a3b012a4f8f4f0b4db4a7df8, type: 3}
+  nuke: {fileID: 6465145990485023178, guid: f1324b7eb0cb55c438b4c514e78946fd, type: 3}
+  split: {fileID: 3655408686893389927, guid: 378de9925f4c6354fbdea8a71960c155, type: 3}
+  enemyTwo: {fileID: 6465145990485023178, guid: fff75a7bcaeb1ee42883771198704d77,
+    type: 3}
+  enemySpawnValues: {x: 5, y: 0, z: 16}
+  foodSpawnValues: {x: 5, y: 0, z: 16}
+  nukeSpawnValues: {x: 5, y: 0, z: 16}
+  splitSpawnValues: {x: 5, y: 0, z: 16}
+  enemyTwoSpawnValues: {x: 5, y: 0, z: 16}
+  enemyCount: 8
+  foodCount: 3
+  nukeCount: 1
+  splitCount: 1
+  enemyTwoCount: 4
+  enemySpawnWait: 0.5
+  enemyStartWait: 1
+  enemyWaveWait: 1
+  foodSpawnWait: 1.5
+  foodStartWait: 2
+  foodWaveWait: 3.5
+  nukeSpawnWait: 5
+  nukeStartWait: 5
+  nukeWaveWait: 5
+  splitSpawnWait: 5
+  splitStartWait: 5
+  splitWaveWait: 4
+  enemyTwoSpawnWait: 0.5
+  enemyTwoStartWait: 1
+  enemyTwoWaveWait: 1
+  isScoreTextAvailable: 1
+  scoreText: {fileID: 0}
+  highScore: 0
+  neededPointsLvl1: 100
+  neededPointsLvl2: 120
+  neededPointsLvl3: 300
 --- !u!4 &110231046
 Transform:
   m_ObjectHideFlags: 0
@@ -269,54 +293,6 @@ Transform:
   m_GameObject: {fileID: 110231043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &133305562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 133305564}
-  - component: {fileID: 133305563}
-  m_Layer: 0
-  m_Name: EnemySpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &133305563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133305562}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 009cdf2f41d8aaf489a95dcef42b83b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 6465145990485023178, guid: 212c051323b7b5541adb161cae6fb0ea, type: 3}
-  enemySpawnPos: {fileID: 133305564}
-  spawnRate: 3
-  negValue: -5
-  posValue: 5
---- !u!4 &133305564
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133305562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -611,6 +587,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &731500003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 731500004}
+  m_Layer: 0
+  m_Name: EnemySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &731500004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731500003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &733497298
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +895,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1536188881
 GameObject:
@@ -972,19 +978,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1544308141 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 138114216, guid: 0f02a086b54703c43a5069b267df955e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2011806071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1594727088
+--- !u!1 &1554272634
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -992,45 +986,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1594727090}
-  - component: {fileID: 1594727089}
+  - component: {fileID: 1554272635}
   m_Layer: 0
   m_Name: FoodSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1594727089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594727088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 394c717a30df2714fa2b7c061f067d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  food: {fileID: 5370757411914602862, guid: 69772670a3b012a4f8f4f0b4db4a7df8, type: 3}
-  foodSpawnPos: {fileID: 1594727090}
-  spawnRate: 2
-  negValue: -5
-  posValue: 5
---- !u!4 &1594727090
+  m_IsActive: 0
+--- !u!4 &1554272635
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594727088}
+  m_GameObject: {fileID: 1554272634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852246897
 GameObject:
