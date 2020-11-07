@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace Player
 {
@@ -12,13 +14,19 @@ namespace Player
         public GameObject pauseMenu;
         public GameObject deathMenu;
         public GameObject optionsMenu;
+        public GameObject homeOptionsMenu;
+        public GameObject homeMenu;
         public GameObject bugBearHealth;
         public GameObject joystick;
-        public Button pauseBtn;
-        public Button fireBtn;
+        public GameObject fire;
+        private string currentScene;
+        //public Button pauseBtn;
+        //public Button fireBtn;
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool gameIsPaused;
-        
+        public Toggle toggle;
+        private string leftHandedPref;
+        private bool isLeftHanded;
 
         private void Awake()
         {
@@ -27,15 +35,89 @@ namespace Player
 
         void Start()
         {
+            currentScene = SceneManager.GetActiveScene().name;
             gameIsPaused = false;
+            print(currentScene);
+
+            //Add listener for when the state of the Toggle changes, to take action
+            if (currentScene != "LvlSelect" || currentScene != "Customize" || currentScene != "LvlTransition")
+            {
+                StartCheckLeftHanded();
+                toggle.onValueChanged.AddListener(delegate {
+                    ToggleValueChanged(toggle);
+                });
+            }
         }
 
         void Update()
         {
-            /*if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space"))
             {
-                print("space key was pressed");
-            }*/
+                //BottomRight(fire);
+                //BottomLeft(joystick);
+                //print("space key was pressed");
+                //PlayerPrefs.SetString("LeftHanded", "");
+            }
+        }
+
+        private void StartCheckLeftHanded()
+        {
+            leftHandedPref = PlayerPrefs.GetString("LeftHanded");
+            print(leftHandedPref);
+            if (leftHandedPref == "")
+            {
+                PlayerPrefs.SetString("LeftHanded", "false");
+                toggle.isOn = false;
+                isLeftHanded = false;
+            }
+            SwitchControls(leftHandedPref);
+        }
+
+        private void ToggleValueChanged(Toggle change)
+        {
+            isLeftHanded = toggle.isOn;
+            leftHandedPref = isLeftHanded.ToString();
+            PlayerPrefs.SetString("LeftHanded", leftHandedPref);
+            SwitchControls(leftHandedPref);
+        }
+
+        private void SwitchControls(string hand)
+        {
+            switch (hand)
+            {
+                case "True":
+                    toggle.isOn = true;
+                    isLeftHanded = true;
+                    BottomRight(fire);
+                    BottomLeft(joystick);
+                    break;
+                case "False":
+                    toggle.isOn = false;
+                    isLeftHanded = false;
+                    BottomRight(joystick);
+                    BottomLeft(fire);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void BottomRight(GameObject uiObject)
+        {
+            RectTransform uitransform = uiObject.GetComponent<RectTransform>();
+
+            uitransform.anchorMin = new Vector2(1, 0);
+            uitransform.anchorMax = new Vector2(1, 0);
+            uitransform.pivot = new Vector2(1, 0);
+        }
+
+        private void BottomLeft(GameObject uiObject)
+        {
+            RectTransform uitransform = uiObject.GetComponent<RectTransform>();
+
+            uitransform.anchorMin = new Vector2(0, 0);
+            uitransform.anchorMax = new Vector2(0, 0);
+            uitransform.pivot = new Vector2(0, 0);
         }
 
         public void LockScreen()
@@ -68,6 +150,7 @@ namespace Player
                 pauseMenu.SetActive(true);
                 LockScreen();
             }
+            //print("gameIsPaused" + gameIsPaused);
         }
 
         public void Death()
@@ -83,9 +166,7 @@ namespace Player
 
         public void Resume()
         {
-            gameIsPaused = false;
-            pauseMenu.SetActive(false);
-            UnlockScreen();
+            Pause();
         }
 
         public void Fire()
@@ -103,6 +184,18 @@ namespace Player
         {
             pauseMenu.SetActive(true);
             optionsMenu.SetActive(false);
+        }
+
+        public void HomeOptionsMenu()
+        {
+            homeMenu.SetActive(false);
+            homeOptionsMenu.SetActive(true);
+        }
+
+        public void HomeOptionsBack()
+        {
+            homeMenu.SetActive(true);
+            homeOptionsMenu.SetActive(false);
         }
 
         // Load Scenes by name
