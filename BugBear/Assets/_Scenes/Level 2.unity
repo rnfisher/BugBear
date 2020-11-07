@@ -258,14 +258,14 @@ MonoBehaviour:
   nukeSpawnValues: {x: 5, y: 0, z: 16}
   splitSpawnValues: {x: 5, y: 0, z: 16}
   enemyTwoSpawnValues: {x: 5, y: 0, z: 16}
-  enemyCount: 8
-  foodCount: 3
+  enemyCount: 4
+  foodCount: 2
   nukeCount: 1
   splitCount: 1
-  enemyTwoCount: 4
-  enemySpawnWait: 0.5
-  enemyStartWait: 1
-  enemyWaveWait: 1
+  enemyTwoCount: 2
+  enemySpawnWait: 1
+  enemyStartWait: 2
+  enemyWaveWait: 2
   foodSpawnWait: 1.5
   foodStartWait: 2
   foodWaveWait: 3.5
@@ -275,11 +275,11 @@ MonoBehaviour:
   splitSpawnWait: 5
   splitStartWait: 5
   splitWaveWait: 4
-  enemyTwoSpawnWait: 0.5
+  enemyTwoSpawnWait: 1
   enemyTwoStartWait: 1
   enemyTwoWaveWait: 1
   isScoreTextAvailable: 1
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 2128724628}
   highScore: 0
   neededPointsLvl1: 100
   neededPointsLvl2: 120
@@ -587,36 +587,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &731500003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 731500004}
-  m_Layer: 0
-  m_Name: EnemySpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &731500004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 731500003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &733497298
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,36 +948,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1554272634
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1554272635}
-  m_Layer: 0
-  m_Name: FoodSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1554272635
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554272634}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852246897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1173,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f02a086b54703c43a5069b267df955e, type: 3}
+--- !u!114 &2128724628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 138114216, guid: 0f02a086b54703c43a5069b267df955e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2011806071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7267573847825682203
 PrefabInstance:
   m_ObjectHideFlags: 0
