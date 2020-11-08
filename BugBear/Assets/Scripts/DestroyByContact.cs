@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;
 
 namespace Player
 {
     public class DestroyByContact : MonoBehaviour
     {
-        public Animation anim;
+        public Animator animator;
+        //private Rigidbody2D rigid;
         public int scoreValue;
         private GameController gameController;
 
         void Start()
         {
+            //animator = GetComponent<Animator>();
+            //rigid = GetComponent<Rigidbody2D>();
             GameObject gameControllerObject = GameObject.FindWithTag("GameController"); //This section is to detect if the object that collides with this script also has the 'GameController' script
             if (gameControllerObject != null)                                                 //And apply the values associated with that script.
             {
@@ -29,7 +33,9 @@ namespace Player
         {
             if (Input.GetKeyDown("space"))
             {
-                //anim.SetTrigger("AttackOne");
+                print("Space Bar");
+                //animator.SetBool("DeathState", true);
+                animator.SetTrigger("DeathState");
             }
         }
 
@@ -38,8 +44,6 @@ namespace Player
             if (other.tag == "Player")
             {
                 PlayerHealth.instance.TakeDamage(0.1f);
-                //Debug.Log("Hit");
-                
             }
             else if (other.tag == "Boundary")
             {
