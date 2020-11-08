@@ -39,14 +39,11 @@ namespace Player
             gameIsPaused = false;
             print(currentScene);
 
-            //Add listener for when the state of the Toggle changes, to take action
-            if (currentScene != "LvlSelect" || currentScene != "Customize" || currentScene != "LvlTransition")
-            {
-                StartCheckLeftHanded();
-                toggle.onValueChanged.AddListener(delegate {
-                    ToggleValueChanged(toggle);
-                });
-            }
+            StartCheckLeftHanded();
+            toggle.onValueChanged.AddListener(delegate {
+                ToggleValueChanged(toggle);
+            });
+         
         }
 
         void Update()
@@ -186,18 +183,6 @@ namespace Player
             optionsMenu.SetActive(false);
         }
 
-        public void HomeOptionsMenu()
-        {
-            homeMenu.SetActive(false);
-            homeOptionsMenu.SetActive(true);
-        }
-
-        public void HomeOptionsBack()
-        {
-            homeMenu.SetActive(true);
-            homeOptionsMenu.SetActive(false);
-        }
-
         // Load Scenes by name
         public void LoadSceneByName(string sceneName)
         {
@@ -210,7 +195,7 @@ namespace Player
             SceneSettings(sceneName);
         }
 
-        public void SceneSettings(string s)
+        private void SceneSettings(string s)
         {
             switch (s)
             {

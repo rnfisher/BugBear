@@ -353,6 +353,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755988326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 755988326, guid: 312d4bfe84621974cb6d94eea96c6860,
+    type: 3}
+  m_PrefabInstance: {fileID: 1646219583521398829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f32ccc8d9f9f77479687ac202312c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &861619415
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,20 +819,50 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3955996225036638202, guid: 312d4bfe84621974cb6d94eea96c6860,
+    - target: {fileID: 1646219583354866428, guid: 312d4bfe84621974cb6d94eea96c6860,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 755988326}
+    - target: {fileID: 1646219583354866428, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HomeOptionsMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 4275420368800611006, guid: 312d4bfe84621974cb6d94eea96c6860,
+    - target: {fileID: 1646219583458957536, guid: 312d4bfe84621974cb6d94eea96c6860,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 755988326}
+    - target: {fileID: 1646219583458957536, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSceneByName
       objectReference: {fileID: 0}
-    - target: {fileID: 4297736453680463988, guid: 312d4bfe84621974cb6d94eea96c6860,
+    - target: {fileID: 1674762768658217708, guid: 312d4bfe84621974cb6d94eea96c6860,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 755988326}
+    - target: {fileID: 1674762768658217708, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HomeOptionsBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266221605877596728, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 755988326}
+    - target: {fileID: 3266221605877596728, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSceneByName
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266221605877596728, guid: 312d4bfe84621974cb6d94eea96c6860,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 6724023611498908926, guid: 312d4bfe84621974cb6d94eea96c6860,
         type: 3}

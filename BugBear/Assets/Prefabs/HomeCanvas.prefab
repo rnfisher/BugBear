@@ -119,7 +119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4277485161755830929}
+      - m_Target: {fileID: 0}
         m_MethodName: HomeOptionsBack
         m_Mode: 1
         m_Arguments:
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4277485161755830929}
+      - m_Target: {fileID: 0}
         m_MethodName: HomeOptionsMenu
         m_Mode: 1
         m_Arguments:
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4277485161755830929}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadSceneByName
         m_Mode: 5
         m_Arguments:
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4277485161755830929}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadSceneByName
         m_Mode: 5
         m_Arguments:
@@ -1687,7 +1687,7 @@ GameObject:
   - component: {fileID: 4278430823853581728}
   - component: {fileID: 5938230639135735618}
   - component: {fileID: 6560838877190997014}
-  - component: {fileID: 4277485161755830929}
+  - component: {fileID: 755988326}
   m_Layer: 5
   m_Name: HomeCanvas
   m_TagString: Untagged
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4277485161755830929
+--- !u!114 &755988326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1785,18 +1785,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6724023611498908926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea8deee8d82fd34dbc2673c4d05ceef, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f32ccc8d9f9f77479687ac202312c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
-  deathMenu: {fileID: 0}
-  optionsMenu: {fileID: 0}
   homeOptionsMenu: {fileID: 3955996225036638202}
   homeMenu: {fileID: 2291906543740133452}
-  bugBearHealth: {fileID: 0}
-  joystick: {fileID: 0}
-  fire: {fileID: 0}
-  gameIsPaused: 0
   toggle: {fileID: 2346060680263662151}
 --- !u!1 &7457093247028989071
 GameObject:
