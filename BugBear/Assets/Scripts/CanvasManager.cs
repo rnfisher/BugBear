@@ -20,8 +20,6 @@ namespace Player
         public GameObject joystick;
         public GameObject fire;
         private string currentScene;
-        //public Button pauseBtn;
-        //public Button fireBtn;
         [HideInInspector] public static string nextScene;
         [HideInInspector] public bool gameIsPaused;
         public Toggle toggle;
@@ -48,13 +46,10 @@ namespace Player
 
         void Update()
         {
-            if (Input.GetKeyDown("space"))
+            /*if (Input.GetKeyDown("space"))
             {
-                //BottomRight(fire);
-                //BottomLeft(joystick);
-                //print("space key was pressed");
-                //PlayerPrefs.SetString("LeftHanded", "");
-            }
+
+            }*/
         }
 
         private void StartCheckLeftHanded()
@@ -127,8 +122,6 @@ namespace Player
 
         public void UnlockScreen()
         {
-            //Cursor.lockState = CursorLockMode.Locked;
-            //Cursor.visible = false;
             Time.timeScale = 1f;
             PlayerHealth.instance.TakeDamageToggle();
         }
@@ -147,7 +140,6 @@ namespace Player
                 pauseMenu.SetActive(true);
                 LockScreen();
             }
-            //print("gameIsPaused" + gameIsPaused);
         }
 
         public void Death()
@@ -183,7 +175,6 @@ namespace Player
             optionsMenu.SetActive(false);
         }
 
-        // Load Scenes by name
         public void LoadSceneByName(string sceneName)
         {
             if (sceneName == "Home" || sceneName == "LvlSelect")

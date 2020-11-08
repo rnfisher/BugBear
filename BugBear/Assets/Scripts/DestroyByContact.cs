@@ -7,7 +7,7 @@ namespace Player
 {
     public class DestroyByContact : MonoBehaviour
     {
-
+        public Animation anim;
         public int scoreValue;
         private GameController gameController;
 
@@ -24,6 +24,15 @@ namespace Player
                 //Debug.Log("Cannot find 'GameController' script");
             }
         }
+
+        void Update()
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                //anim.SetTrigger("AttackOne");
+            }
+        }
+
         void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")

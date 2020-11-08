@@ -32,11 +32,6 @@ public class HomeCanvasManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     private void StartCheckLeftHanded()
     {
         leftHandedPref = PlayerPrefs.GetString("LeftHanded");

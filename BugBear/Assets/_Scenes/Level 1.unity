@@ -280,7 +280,7 @@ MonoBehaviour:
   isScoreTextAvailable: 1
   scoreText: {fileID: 1544308141}
   highScore: 0
-  neededPointsLvl1: 100
+  neededPointsLvl1: 25
   neededPointsLvl2: 120
   neededPointsLvl3: 300
 --- !u!4 &110231046
