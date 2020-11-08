@@ -35,7 +35,7 @@ namespace Player
         {
             currentScene = SceneManager.GetActiveScene().name;
             gameIsPaused = false;
-            print(currentScene);
+            //print(currentScene);
 
             StartCheckLeftHanded();
             toggle.onValueChanged.AddListener(delegate {
@@ -55,7 +55,7 @@ namespace Player
         private void StartCheckLeftHanded()
         {
             leftHandedPref = PlayerPrefs.GetString("LeftHanded");
-            print(leftHandedPref);
+            //print(leftHandedPref);
             if (leftHandedPref == "")
             {
                 PlayerPrefs.SetString("LeftHanded", "false");
