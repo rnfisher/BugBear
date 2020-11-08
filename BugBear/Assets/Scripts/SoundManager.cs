@@ -23,15 +23,6 @@ public class SoundManager : MonoBehaviour
         audioSource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void StartVolume() { 
-    }
-
     private void UpdateVolume()
     {
         masterVolume = volumeSlider.value;
