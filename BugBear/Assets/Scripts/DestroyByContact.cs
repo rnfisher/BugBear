@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Player
 {
@@ -15,7 +16,7 @@ namespace Player
 
         void Start()
         {
-            //animator = GetComponent<Animator>();
+            
             //rigid = GetComponent<Rigidbody2D>();
             GameObject gameControllerObject = GameObject.FindWithTag("GameController"); //This section is to detect if the object that collides with this script also has the 'GameController' script
             if (gameControllerObject != null)                                                 //And apply the values associated with that script.
@@ -28,6 +29,10 @@ namespace Player
                 //Debug.Log("Cannot find 'GameController' script");
             }
         }
+        void Awake()
+        {
+
+        }
 
         void Update()
         {
@@ -35,7 +40,7 @@ namespace Player
             {
                 print("Space Bar");
                 //animator.SetBool("DeathState", true);
-                animator.SetTrigger("DeathState");
+                //animator.SetTrigger("DeathState");
             }
         }
 
@@ -43,6 +48,7 @@ namespace Player
         {
             if (other.tag == "Player")
             {
+                StartCoroutine(DeathAnimation());
                 PlayerHealth.instance.TakeDamage(0.1f);
             }
             else if (other.tag == "Boundary")
@@ -67,14 +73,22 @@ namespace Player
             }
             else if (other.tag == "Projectile")
             {
-                //Debug.Log("Projectile Hit");
+                StartCoroutine(DeathAnimation());
+
                 gameController.AddScore(scoreValue); //add score when hitting this object
-                Destroy(other.gameObject);
-                Destroy(gameObject);
+
+
+                Destroy(other.gameObject); //destroys projectile
+
                 return;
             }
-            Destroy(gameObject); //If this hits anything unspecified, it will destroy itself
-
+        }
+        IEnumerator DeathAnimation()
+        {
+            animator.SetBool("DeathState", true); // go into death animation
+            this.GetComponent<BoxCollider>().enabled = false;
+            yield return new WaitForSeconds(0.3f); // time of animation
+            Destroy(gameObject);
         }
     }
 }
