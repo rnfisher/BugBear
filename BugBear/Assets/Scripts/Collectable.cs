@@ -41,6 +41,35 @@ namespace Player
         {
             if (other.tag == "Player")
             {
+                switch (tagName)
+                {
+                    case "Collectable":
+                        SoundManager.instance.audioSources[4].Play();
+                        break;
+                    case "Double":
+                        SoundManager.instance.audioSources[7].Play();
+                        break;
+                    case "Nuke":
+                        SoundManager.instance.audioSources[6].Play();
+                        break;
+                    case "PowerUp":
+                        SoundManager.instance.audioSources[7].Play();
+                        break;
+                    case "Rapid":
+                        SoundManager.instance.audioSources[7].Play();
+                        break;
+                    case "Shield":
+                        SoundManager.instance.audioSources[7].Play();
+                        break;
+                    case "Shot":
+                        SoundManager.instance.audioSources[7].Play();
+                        break;
+                    case "Split":
+                        SoundManager.instance.audioSources[7].Play();
+                        break;
+                    default:
+                        break;
+                }
                 gameController.AddScore(scoreValue);
                 PlayerHealth.instance.GainHealth(foodHealthGain);
                 Destroy(gameObject);
