@@ -16,7 +16,6 @@ namespace Player
 
         void Start()
         {
-            
             //rigid = GetComponent<Rigidbody2D>();
             GameObject gameControllerObject = GameObject.FindWithTag("GameController"); //This section is to detect if the object that collides with this script also has the 'GameController' script
             if (gameControllerObject != null)                                                 //And apply the values associated with that script.
