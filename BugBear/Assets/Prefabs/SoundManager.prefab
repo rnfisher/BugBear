@@ -825,6 +825,8 @@ MonoBehaviour:
   - {fileID: 1210989021}
   - {fileID: 4726616905138917487}
   - {fileID: 2311527614485778530}
+  - {fileID: 2036843598861827473}
+  - {fileID: 8188399981318443422}
   volumeSlider: {fileID: 0}
 --- !u!1 &7896166305496786425
 GameObject:
