@@ -37,11 +37,13 @@ namespace Player
             gameIsPaused = false;
             //print(currentScene);
 
-            StartCheckLeftHanded();
-            toggle.onValueChanged.AddListener(delegate {
-                ToggleValueChanged(toggle);
-            });
-         
+            if (currentScene != "LvlSelect")
+            {
+                StartCheckLeftHanded();
+                toggle.onValueChanged.AddListener(delegate {
+                    ToggleValueChanged(toggle);
+                });
+            }
         }
 
         void Update()
