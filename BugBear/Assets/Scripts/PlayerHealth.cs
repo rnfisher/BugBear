@@ -58,8 +58,8 @@ namespace Player
 
                 if (healthBar.value <= 0)
                 {
+                    SoundManager.instance.audioSources[3].Play();
                     CanvasManager.instance.Death();
-                    //GameController.instance.SetHighScore();
                 }
 
                 healthBar.value = Mathf.Lerp(previousHealthDivided, newHealthDivided, 0.1f);

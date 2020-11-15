@@ -116,6 +116,8 @@ MonoBehaviour:
   shotSpawn: {fileID: 7267573846808835777}
   fireRate: 0.25
   moveJoystick: {fileID: 0}
+  enemy: []
+  splitShot: 0
 --- !u!1 &7267573848195632345
 GameObject:
   m_ObjectHideFlags: 0

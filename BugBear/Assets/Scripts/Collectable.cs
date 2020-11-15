@@ -41,9 +41,7 @@ namespace Player
         {
             if (other.tag == "Player")
             {
-                //anim.SetTrigger("");
-                //  CanvasManager.instance.AddScore(foodPointGain);
-                gameController.AddScore(scoreValue); //add score when hitting this object
+                gameController.AddScore(scoreValue);
                 PlayerHealth.instance.GainHealth(foodHealthGain);
                 Destroy(gameObject);
             }

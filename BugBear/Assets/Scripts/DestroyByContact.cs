@@ -36,12 +36,7 @@ namespace Player
 
         void Update()
         {
-            if (Input.GetKeyDown("space"))
-            {
-                print("Space Bar");
-                //animator.SetBool("DeathState", true);
-                //animator.SetTrigger("DeathState");
-            }
+
         }
 
         void OnTriggerEnter(Collider other)
@@ -85,6 +80,7 @@ namespace Player
         }
         IEnumerator DeathAnimation()
         {
+            SoundManager.instance.audioSources[2].Play();
             animator.SetBool("DeathState", true); // go into death animation
             this.GetComponent<BoxCollider>().enabled = false;
             yield return new WaitForSeconds(0.3f); // time of animation
