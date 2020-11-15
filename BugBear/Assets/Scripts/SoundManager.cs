@@ -9,12 +9,7 @@ namespace Player
     public class SoundManager : MonoBehaviour
     {
         public static SoundManager instance;
-        public AudioSource music;
-        public AudioSource shoot;
-        public AudioSource enemyDeath;
-        public AudioSource playerDeath;
-        public AudioSource foodCollection;
-        public AudioSource collision;
+        public AudioSource[] audioSources;
         public Slider volumeSlider;
         private float masterVolume = 1f;
         private string currentScene;
@@ -24,27 +19,28 @@ namespace Player
             instance = this;
         }
 
-        // Start is called before the first frame update
         void Start()
         {
             currentScene = SceneManager.GetActiveScene().name;
             volumeSlider.onValueChanged.AddListener(delegate {
-                UpdateVolume();
+                UpdateMasterVolume();
             });
             masterVolume = PlayerPrefs.GetFloat("MasterVolume");
             volumeSlider.value = masterVolume;
             if (currentScene == "Level 1" || currentScene == "Level 2" || currentScene == "Level 3")
             {
-                music.Play();
+                audioSources[0].Play();
             }
         }
 
-        private void UpdateVolume()
+        private void UpdateMasterVolume()
         {
             masterVolume = volumeSlider.value;
-            music.volume = masterVolume;
+            for (int i = 0; i < audioSources.Length; i++)
+            {
+                audioSources[i].volume = masterVolume;
+            }
             PlayerPrefs.SetFloat("MasterVolume", masterVolume);
-        }
+        } 
     }
-
 }

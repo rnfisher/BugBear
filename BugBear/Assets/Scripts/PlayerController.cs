@@ -60,15 +60,16 @@ namespace Player
             {
                 nextFire = Time.time + fireRate;
                 Instantiate(shot, shotSpawn.position, Quaternion.identity);  //instantiates a Shot in front of the player on button press
-                GetComponent<AudioSource>().Play ();
-                    if (splitShot == true)
-                        {
-                            Instantiate(shot, shotSpawn.position, Quaternion.Euler(new Vector3(0, 40, 0)));
-                            Instantiate(shot, shotSpawn.position, Quaternion.Euler(new Vector3(0, -40, 0)));
-                        }
-            }
+                SoundManager.instance.audioSources[1].Play();
 
+                if (splitShot == true)
+                {
+                    Instantiate(shot, shotSpawn.position, Quaternion.Euler(new Vector3(0, 40, 0)));
+                    Instantiate(shot, shotSpawn.position, Quaternion.Euler(new Vector3(0, -40, 0)));
+                }
+            }
         }
+
         public void OnTriggerEnter(Collider other)
         {
 
