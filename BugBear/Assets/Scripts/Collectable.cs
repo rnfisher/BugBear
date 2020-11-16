@@ -43,7 +43,7 @@ namespace Player
             {
                 switch (tagName)
                 {
-                    case "Collectable":
+                    case "Collectible":
                         SoundManager.instance.audioSources[4].Play();
                         break;
                     case "Double":
