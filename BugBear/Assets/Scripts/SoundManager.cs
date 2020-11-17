@@ -31,6 +31,7 @@ namespace Player
             {
                 audioSources[0].Play();
             }
+            print(currentScene);
         }
 
         private void UpdateMasterVolume()
