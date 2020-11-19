@@ -26,6 +26,11 @@ namespace Player
         private string leftHandedPref;
         private bool isLeftHanded;
 
+        public Animator bearAnimator;
+        public GameObject bearSkin;
+        public GameObject bearSkin2;
+        public GameObject bearSkin3;
+
         private void Awake()
         {
             instance = this;
@@ -44,6 +49,7 @@ namespace Player
                     ToggleValueChanged(toggle);
                 });
             }
+
         }
 
         void Update()
@@ -146,8 +152,7 @@ namespace Player
 
         public void Death()
         {
-            deathMenu.SetActive(true);
-            Pause();
+            StartCoroutine(BearDeath());
         }
 
         public void ReplayLevel()
@@ -209,6 +214,31 @@ namespace Player
                 default:
                     break;
             }
+        }
+
+        IEnumerator BearDeath()
+        {
+            bearSkin = GameObject.Find("Sprite_Original");// Get Original Sprite
+            bearSkin2 = GameObject.Find("Sprite_TopHat");// Get TopHat Sprite
+            bearSkin3 = GameObject.Find("Sprite_Swim");// Get Swim Sprite
+
+            if (bearSkin != null)
+            {
+                bearAnimator = bearSkin.GetComponent<Animator>();
+            }
+            if (bearSkin2 != null)
+            {
+                bearAnimator = bearSkin2.GetComponent<Animator>();
+            }
+            if (bearSkin3 != null)
+            {
+                bearAnimator = bearSkin3.GetComponent<Animator>();
+            }
+
+            bearAnimator.SetInteger("AnimState", 1); // go into death animation
+            yield return new WaitForSeconds(.5f); // time of animation
+            deathMenu.SetActive(true);
+            Pause();
         }
     }
 }
