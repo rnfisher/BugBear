@@ -9,10 +9,13 @@ public class HomeAnimation : MonoBehaviour
     public Animator animator;
     public GameObject options;
     public GameObject main;
+    public GameObject customize;
 
     void Start()
     {
-
+        //main = GameObject.Find("Main");
+        //options = GameObject.Find("OptionsMenu");
+        //customize = GameObject.Find("CustomizeMenu");
     }
 
     public void MenuToOptions()
@@ -24,10 +27,20 @@ public class HomeAnimation : MonoBehaviour
         StartCoroutine(OptionsToMenuAnimation());
     }
 
+    public void MenuToCustomize()
+    {
+        StartCoroutine(MenuToCustomizeAnimation());
+    }
+    public void CustomizeToMenu()
+    {
+        StartCoroutine(CustomizeToMenuAnimation());
+    }
+
 
     IEnumerator MenuToOptionsAnimation()
     {
         animator.SetBool("MenuToOptions", true); // go into transition animation
+        customize.SetActive(false);
         options.SetActive(false);
         main.SetActive(false);
         yield return new WaitForSeconds(0.3f); // time of animation
@@ -36,6 +49,26 @@ public class HomeAnimation : MonoBehaviour
     IEnumerator OptionsToMenuAnimation()
     {
         animator.SetBool("MenuToOptions", false); // go into transition animation
+        customize.SetActive(false);
+        options.SetActive(false);
+        main.SetActive(false);
+        yield return new WaitForSeconds(0.3f); // time of animation
+        main.SetActive(true);
+    }
+
+    IEnumerator MenuToCustomizeAnimation()
+    {
+        animator.SetBool("MenuToCustomize", true); // go into transition animation
+        customize.SetActive(false);
+        options.SetActive(false);
+        main.SetActive(false);
+        yield return new WaitForSeconds(0.3f); // time of animation
+        customize.SetActive(true);
+    }
+    IEnumerator CustomizeToMenuAnimation()
+    {
+        animator.SetBool("MenuToCustomize", false); // go into transition animation
+        customize.SetActive(false);
         options.SetActive(false);
         main.SetActive(false);
         yield return new WaitForSeconds(0.3f); // time of animation
