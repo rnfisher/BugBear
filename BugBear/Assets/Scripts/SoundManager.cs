@@ -27,7 +27,7 @@ namespace Player
             });
             masterVolume = PlayerPrefs.GetFloat("MasterVolume");
             volumeSlider.value = masterVolume;
-            if (currentScene == "Level 1" || currentScene == "Level 2" || currentScene == "Level 3")
+            if (currentScene == "Home")
             {
                 audioSources[0].Play();
             }
