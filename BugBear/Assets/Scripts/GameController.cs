@@ -43,7 +43,7 @@ namespace Player
         private string currentScene;
         public bool isScoreTextAvailable = true;
         public Text scoreText;
-        private int score;
+        public int score;
         public int highScore;
         public int neededPointsLvl1 = 100;
         public int neededPointsLvl2 = 120;
@@ -228,8 +228,7 @@ namespace Player
                     PlayerPrefs.SetString("NextScene", "Level 2");
                     break;
                 case "Level 2":
-                    //PlayerPrefs.SetString("NextScene", "Level 3");
-                    PlayerPrefs.SetString("NextScene", "Home");
+                    PlayerPrefs.SetString("NextScene", "Level 3");
                     break;
                 case "Level 3":
                     PlayerPrefs.SetString("NextScene", "Home");

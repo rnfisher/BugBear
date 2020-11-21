@@ -182,9 +182,10 @@ MonoBehaviour:
   enemyTwoWaveWait: 0
   isScoreTextAvailable: 1
   scoreText: {fileID: 1544308141}
+  score: 0
   highScore: 0
   neededPointsLvl1: 100
-  neededPointsLvl2: 120
+  neededPointsLvl2: 200
   neededPointsLvl3: 300
 --- !u!4 &110231046
 Transform:

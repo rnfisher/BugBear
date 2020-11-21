@@ -128,6 +128,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 49727564, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49727564, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 49727564, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 277954910, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
       propertyPath: m_Name
       value: ScoreTxt
@@ -135,6 +147,18 @@ PrefabInstance:
     - target: {fileID: 277954912, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
       propertyPath: m_Text
       value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 277954912, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 277954912, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 277954912, guid: 35a5c6d5c95a8154399d3eb9e503c805, type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 292852242443078559, guid: 35a5c6d5c95a8154399d3eb9e503c805,
         type: 3}
@@ -241,10 +265,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 608167976450484123, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608167976450484123, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608167976450484123, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5512975923367834894, guid: 35a5c6d5c95a8154399d3eb9e503c805,
         type: 3}
       propertyPath: m_Name
       value: LvlTransitionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686087865654891305, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f0f509a07386014fbdbc0a4a37e07f9,
+        type: 3}
+    - target: {fileID: 5686087865654891305, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5706913667781284781, guid: 35a5c6d5c95a8154399d3eb9e503c805,
         type: 3}
@@ -878,7 +928,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d7945f00d40bf1845aeed7aa30b7adfa, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.740566, b: 0.95186716, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

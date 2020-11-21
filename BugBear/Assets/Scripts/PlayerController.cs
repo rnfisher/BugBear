@@ -33,6 +33,11 @@ namespace Player
             splitShot = false;
         }
 
+        private void Update()
+        {
+            moveJoystick = GameObject.Find("VirtualJoystickContainer").GetComponent<VirtualJoystick>();
+        }
+
         void FixedUpdate()
         {
             float moveHorizontal = Input.GetAxis("Horizontal");

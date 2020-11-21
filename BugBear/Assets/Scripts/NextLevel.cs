@@ -8,9 +8,10 @@ namespace Player
 {
     public class NextLevel : MonoBehaviour
     {
+        public static NextLevel instance;
         private string nextScene;
-        private int score;
-        private int highScore;
+        public int score;
+        public int highScore;
         public Text nextSceneText;
         public Text highScoreText;
         public Text scoreText;
@@ -18,6 +19,11 @@ namespace Player
         public GameObject lvl1Background;
         public GameObject lvl2Background;
         public GameObject lvl3Background;
+
+        private void Awake()
+        {
+            instance = this;
+        }
 
         void Start()
         {
