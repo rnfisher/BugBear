@@ -2393,6 +2393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3566961361450086074}
   - component: {fileID: 570764117943100418}
+  - component: {fileID: 4545827989524940429}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -2471,7 +2472,31 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4545827989524940429}
+        m_MethodName: SetLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4545827989524940429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6286909826545891320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd5878edf59aa84a963b088e7f22aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 7cd6288ff08fdcf489949b523dea226c, type: 2}
 --- !u!1 &6517900294145914491
 GameObject:
   m_ObjectHideFlags: 0
