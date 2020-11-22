@@ -10,8 +10,8 @@ namespace Player
     {
         public static NextLevel instance;
         private string nextScene;
-        public int score;
-        public int highScore;
+        [HideInInspector] public int score;
+        [HideInInspector] public int highScore;
         public Text nextSceneText;
         public Text highScoreText;
         public Text scoreText;
@@ -46,13 +46,12 @@ namespace Player
                 case "Level 3":
                     lvl3Background.SetActive(true);
                     break;
-                case "Level 4":
+                case "Level 4 Endless":
                     lvl4Background.SetActive(true);
                     break;
                 default:
                     break;
             }
-            //GameController.instance.SetHighScore();
             SetText();
         }
 
