@@ -11,7 +11,7 @@ namespace Player
         public static SoundManager instance;
         public AudioSource[] audioSources;
         public Slider volumeSlider;
-        public float masterVolume = 1f;
+        [HideInInspector] public float masterVolume = 1f;
         private string currentScene;
 
         private void Awake()
@@ -64,7 +64,7 @@ namespace Player
                 case "Level 3":
                     audioSources[0].Play();
                     break;
-                case "Level 4":
+                case "Level 4 Endless":
                     audioSources[0].Play();
                     break;
                 default:
