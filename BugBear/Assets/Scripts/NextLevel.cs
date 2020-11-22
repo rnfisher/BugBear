@@ -20,6 +20,8 @@ namespace Player
         public GameObject lvl2Background;
         public GameObject lvl3Background;
         public GameObject lvl4Background;
+        private Button continueBtn;
+        public float continueBtnPause = 3f;
 
         private void Awake()
         {
@@ -28,10 +30,12 @@ namespace Player
 
         void Start()
         {
+            continueBtn = GameObject.Find("ContinueBTN").GetComponent<Button>();
             nextScene = PlayerPrefs.GetString("NextScene");
             score = PlayerPrefs.GetInt("Score");
             highScore = PlayerPrefs.GetInt("HighScore");
-            
+            StartCoroutine(EnableContinueBtn());
+
             switch (nextScene)
             {
                 case "Home":
@@ -70,6 +74,13 @@ namespace Player
                 GameController.instance.ClearScore();
             }
             CanvasManager.instance.LoadSceneByName(nextScene);
+        }
+
+        IEnumerator EnableContinueBtn()
+        {
+            continueBtn.interactable = false;
+            yield return new WaitForSeconds(continueBtnPause);
+            continueBtn.interactable = true;
         }
     }
 }
