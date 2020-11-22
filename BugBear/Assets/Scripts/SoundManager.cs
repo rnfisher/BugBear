@@ -27,10 +27,8 @@ namespace Player
             });
             masterVolume = PlayerPrefs.GetFloat("MasterVolume");
             volumeSlider.value = masterVolume;
-            if (currentScene == "Home")
-            {
-                audioSources[0].Play();
-            }
+            audioSources[0].Stop();
+            audioSources[0].Play();
             print(currentScene);
         }
 
