@@ -17,7 +17,6 @@ namespace Player
         private void Awake()
         {
             instance = this;
-            print("GAHHHHHHHHHHHHHHHHH");
         }
 
         void Start()
@@ -25,7 +24,7 @@ namespace Player
             
             currentScene = SceneManager.GetActiveScene().name;
 
-            if (volumeSlider == null && currentScene != "LvlSelect" && currentScene != "LvlTransition")
+            if (volumeSlider == null)
             {
                 volumeSlider = GameObject.Find("Slider").GetComponent<Slider>();
             }
@@ -66,12 +65,6 @@ namespace Player
                     audioSources[0].Play();
                     break;
                 case "Level 4":
-                    audioSources[0].Play();
-                    break;
-                case "LvlSelect":
-                    audioSources[0].Play();
-                    break;
-                case "LvlTransition":
                     audioSources[0].Play();
                     break;
                 default:

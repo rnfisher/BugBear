@@ -35,26 +35,10 @@ namespace Player
             }
         }
 
-
         private void PlaySceneMusic()
         {
             switch (currentScene)
             {
-                case "Home":
-                    audioSources[0].Play();
-                    break;
-                case "Level 1":
-                    audioSources[0].Play();
-                    break;
-                case "Level 2":
-                    audioSources[0].Play();
-                    break;
-                case "Level 3":
-                    audioSources[0].Play();
-                    break;
-                case "Level 4":
-                    audioSources[0].Play();
-                    break;
                 case "LvlSelect":
                     audioSources[0].Play();
                     break;
