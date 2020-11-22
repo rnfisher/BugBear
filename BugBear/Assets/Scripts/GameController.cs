@@ -198,6 +198,10 @@ namespace Player
                 PlayerPrefs.SetInt("Score", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
+            else if (currentScene == "Level 4")
+            {
+                PlayerPrefs.SetInt("Score", score);
+            }
         }
 
         public void ClearScore()
@@ -231,6 +235,9 @@ namespace Player
                     PlayerPrefs.SetString("NextScene", "Level 3");
                     break;
                 case "Level 3":
+                    PlayerPrefs.SetString("NextScene", "Level 4");
+                    break;
+                case "Level 4":
                     PlayerPrefs.SetString("NextScene", "Home");
                     break;
                 default:

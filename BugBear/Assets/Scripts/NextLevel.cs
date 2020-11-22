@@ -19,6 +19,7 @@ namespace Player
         public GameObject lvl1Background;
         public GameObject lvl2Background;
         public GameObject lvl3Background;
+        public GameObject lvl4Background;
 
         private void Awake()
         {
@@ -44,6 +45,9 @@ namespace Player
                     break;
                 case "Level 3":
                     lvl3Background.SetActive(true);
+                    break;
+                case "Level 4":
+                    lvl4Background.SetActive(true);
                     break;
                 default:
                     break;
