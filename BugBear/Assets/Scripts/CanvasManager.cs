@@ -31,6 +31,8 @@ namespace Player
         public GameObject bearSkin2;
         public GameObject bearSkin3;
 
+        private Button pauseBtn;
+
         private void Awake()
         {
             instance = this;
@@ -40,7 +42,7 @@ namespace Player
         {
             currentScene = SceneManager.GetActiveScene().name;
             gameIsPaused = false;
-            //print(currentScene);
+            pauseBtn = GameObject.Find("PauseBTN").GetComponent<Button>();
 
             if (currentScene != "LvlSelect")
             {
@@ -174,12 +176,14 @@ namespace Player
         {
             pauseMenu.SetActive(false);
             optionsMenu.SetActive(true);
+            pauseBtn.interactable = false;
         }
 
         public void Back()
         {
             pauseMenu.SetActive(true);
             optionsMenu.SetActive(false);
+            pauseBtn.interactable = true;
         }
 
         public void LoadSceneByName(string sceneName)

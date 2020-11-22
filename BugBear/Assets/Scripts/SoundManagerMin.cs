@@ -6,48 +6,35 @@ using UnityEngine.SceneManagement;
 
 namespace Player
 {
-    public class SoundManager : MonoBehaviour
+    public class SoundManagerMin : MonoBehaviour
     {
-        public static SoundManager instance;
+        public static SoundManagerMin instance;
         public AudioSource[] audioSources;
-        public Slider volumeSlider;
-        public float masterVolume = 1f;
         private string currentScene;
+        private float masterVolume;
 
         private void Awake()
         {
             instance = this;
-            print("GAHHHHHHHHHHHHHHHHH");
         }
 
         void Start()
         {
-            
-            currentScene = SceneManager.GetActiveScene().name;
-
-            if (volumeSlider == null && currentScene != "LvlSelect" && currentScene != "LvlTransition")
-            {
-                volumeSlider = GameObject.Find("Slider").GetComponent<Slider>();
-            }
-            
-            volumeSlider.onValueChanged.AddListener(delegate {
-                UpdateMasterVolume();
-            });
-            
             masterVolume = PlayerPrefs.GetFloat("MasterVolume");
-            volumeSlider.value = masterVolume;
+            print(masterVolume);
+            currentScene = SceneManager.GetActiveScene().name;
             PlaySceneMusic();
+            UpdateMasterVolume();
         }
 
         private void UpdateMasterVolume()
         {
-            masterVolume = volumeSlider.value;
             for (int i = 0; i < audioSources.Length; i++)
             {
                 audioSources[i].volume = masterVolume;
             }
-            PlayerPrefs.SetFloat("MasterVolume", masterVolume);
-        } 
+        }
+
 
         private void PlaySceneMusic()
         {
