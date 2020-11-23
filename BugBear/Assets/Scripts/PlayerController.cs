@@ -25,6 +25,7 @@ namespace Player
         private float nextFire;
         AudioSource audioData;
         public GameObject[] enemy;
+        public GameObject[] enemyFollow;
         public bool splitShot;
 
         private void Awake()
@@ -86,6 +87,13 @@ namespace Player
                 for (var i = 0; i < enemy.Length; i++)
                 {
                     Destroy(enemy[i]);
+                }
+                other.gameObject.SetActive(false);
+                GameObject[] enemyFollow = GameObject.FindGameObjectsWithTag("EnemyFollow");
+
+                for (var i = 0; i < enemy.Length; i++)
+                {
+                    Destroy(enemyFollow[i]);
                 }
             }
             if (other.gameObject.CompareTag("Split"))
