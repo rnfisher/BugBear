@@ -43,7 +43,7 @@ namespace Player
                     audioSources[0].Play();
                     break;
                 case "LvlTransition":
-                    audioSources[0].Play();
+                    audioSources[1].Play();
                     break;
                 default:
                     break;

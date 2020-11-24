@@ -56,16 +56,16 @@ namespace Player
                     audioSources[0].Play();
                     break;
                 case "Level 1":
-                    audioSources[0].Play();
+                    audioSources[8].Play();
                     break;
                 case "Level 2":
-                    audioSources[0].Play();
+                    audioSources[9].Play();
                     break;
                 case "Level 3":
-                    audioSources[0].Play();
+                    audioSources[10].Play();
                     break;
                 case "Level 4 Endless":
-                    audioSources[0].Play();
+                    audioSources[8].Play();
                     break;
                 default:
                     break;
