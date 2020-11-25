@@ -775,7 +775,7 @@ RectTransform:
   m_GameObject: {fileID: 3062036446455299413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.754725, y: 6.9529886, z: 9.754725}
+  m_LocalScale: {x: 2.4756637, y: 1.7646074, z: 2.4756637}
   m_Children:
   - {fileID: 3062036446654714146}
   - {fileID: 3062036446891571187}
@@ -786,7 +786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 282}
+  m_AnchoredPosition: {x: 0, y: 59}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3062036446654714147
@@ -1114,14 +1114,14 @@ RectTransform:
   m_GameObject: {fileID: 3062036447098584512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.446507, y: 2.2902288, z: 2.2902288}
+  m_LocalScale: {x: 2.3974407, y: 0.58123994, z: 0.58123994}
   m_Children: []
   m_Father: {fileID: 3062036445690438824}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 812}
+  m_AnchoredPosition: {x: 0, y: 222.01}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3062036447098584525
@@ -1263,7 +1263,7 @@ RectTransform:
   m_GameObject: {fileID: 3062036447169714133}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.2912216, y: 6.586155, z: 9.935551}
+  m_LocalScale: {x: 1.0890744, y: 1.6715082, z: 2.5215554}
   m_Children:
   - {fileID: 3062036446049748648}
   m_Father: {fileID: 3062036445690438824}
@@ -1271,7 +1271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.449182, y: -785.0001}
+  m_AnchoredPosition: {x: -1.3829, y: -237}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3062036447169714129
