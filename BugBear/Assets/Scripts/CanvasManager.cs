@@ -174,7 +174,6 @@ namespace Player
         public void ReplayLevel()
         {
             PlayerRespawn.instance.Respawn();
-            GameController.instance.ClearScore();
         }
 
         public void Resume()

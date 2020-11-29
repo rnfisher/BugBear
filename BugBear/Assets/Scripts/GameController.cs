@@ -181,26 +181,36 @@ namespace Player
             scoreText.text = "Score: " + score;
         }
 
+        public void SetRespawnScore(int respawnScore)
+        {
+            score = respawnScore;
+            UpdateScore();
+        }
+
         private void NextLevelCheck()
         {
             if (score >= neededPointsLvl1 && currentScene == "Level 1")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl1StartScore", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (score >= neededPointsLvl2 && currentScene == "Level 2")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl2StartScore", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (score >= neededPointsLvl3 && currentScene == "Level 3")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl3StartScore", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (currentScene == "Level 4 Endless")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl4StartScore", score);
             }
         }
 
