@@ -21,7 +21,7 @@ namespace Player
         public GameObject lvl3Background;
         public GameObject lvl4Background;
         private Button continueBtn;
-        public float continueBtnPause = 2.5f;
+        public float continueBtnPause = 1f;
 
         private void Awake()
         {
