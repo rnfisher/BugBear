@@ -27,6 +27,7 @@ namespace Player
         public GameObject[] enemy;
         public GameObject[] enemyFollow;
         public bool splitShot;
+        public float splitShotOnTimer = 5;
 
         private void Awake()
         {
@@ -99,8 +100,15 @@ namespace Player
             if (other.gameObject.CompareTag("Split"))
             {
                 other.gameObject.SetActive(false);
+                StartCoroutine(SplitShotTimer());
+            }
+
+            IEnumerator SplitShotTimer()
+            {
                 splitShot = true;
-            } 
+                yield return new WaitForSeconds(splitShotOnTimer);
+                splitShot = false;
+            }
         }
     }
 }
