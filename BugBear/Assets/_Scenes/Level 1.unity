@@ -184,9 +184,9 @@ MonoBehaviour:
   scoreText: {fileID: 1544308141}
   score: 0
   highScore: 0
-  neededPointsLvl1: 100
-  neededPointsLvl2: 200
-  neededPointsLvl3: 300
+  neededPointsLvl1: 200
+  neededPointsLvl2: 400
+  neededPointsLvl3: 600
 --- !u!4 &110231046
 Transform:
   m_ObjectHideFlags: 0
@@ -1055,6 +1055,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 668188038478443882, guid: 0f02a086b54703c43a5069b267df955e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 668188038939606498, guid: 0f02a086b54703c43a5069b267df955e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.9000244
+      objectReference: {fileID: 0}
     - target: {fileID: 668188039344645870, guid: 0f02a086b54703c43a5069b267df955e,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -1194,6 +1204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354282158100881796, guid: 0f02a086b54703c43a5069b267df955e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.0999756
       objectReference: {fileID: 0}
     - target: {fileID: 3287656562193175880, guid: 0f02a086b54703c43a5069b267df955e,
         type: 3}

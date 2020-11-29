@@ -152,6 +152,20 @@ namespace Player
             }
         }
 
+        void OnApplicationFocus(bool hasFocus)
+        {
+            //isPaused = !hasFocus;
+            //Debug.Log(hasFocus);
+            Pause();
+        }
+
+        void OnApplicationPause(bool pauseStatus)
+        {
+            //isPaused = pauseStatus;
+            //Debug.Log(pauseStatus);
+            Pause();
+        }
+
         public void Death()
         {
             StartCoroutine(BearDeath());
