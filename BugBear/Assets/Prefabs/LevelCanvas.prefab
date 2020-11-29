@@ -341,7 +341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12.700012, y: -11.102417}
+  m_AnchoredPosition: {x: 12.699951, y: -11.102295}
   m_SizeDelta: {x: 236.97949, y: 35.812073}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &668188038177024521
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
-  healthDepletionSpeed: 0.007
+  healthDepletionSpeed: 0.002
   counterTimerMax: 0.2
   healthBar: {fileID: 668188038177024521}
   takeDamage: 1
@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.079}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 2, y: -20.099976}
+  m_AnchoredPosition: {x: 2, y: -20.099854}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &668188038478443880
