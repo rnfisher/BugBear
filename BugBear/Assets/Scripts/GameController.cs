@@ -45,9 +45,11 @@ namespace Player
         public Text scoreText;
         public int score;
         public int highScore;
-        public int neededPointsLvl1 = 100;
-        public int neededPointsLvl2 = 120;
-        public int neededPointsLvl3 = 300;
+        public int neededPointsLvl1 = 200;
+        public int neededPointsLvl2 = 400;
+        public int neededPointsLvl3 = 600;
+        private int lvlScore;
+        //private bool isLvl4ScoreSet;
 
         private void Awake()
         {
@@ -181,9 +183,27 @@ namespace Player
             scoreText.text = "Score: " + score;
         }
 
-        public void SetRespawnScore(int respawnScore)
+        public void SetRespawnScore()
         {
-            score = respawnScore;
+            switch (currentScene)
+            {
+                case "Level 1":
+                    lvlScore = PlayerPrefs.GetInt("Lvl1StartScore");
+                    break;
+                case "Level 2":
+                    lvlScore = PlayerPrefs.GetInt("Lvl2StartScore");
+                    break;
+                case "Level 3":
+                    lvlScore = PlayerPrefs.GetInt("Lvl3StartScore");
+                    break;
+                case "Level 4 Endless":
+                    lvlScore = PlayerPrefs.GetInt("Lvl4StartScore");
+                    Debug.Log("Level 4 Score: " + lvlScore);
+                    break;
+                default:
+                    break;
+            }
+            score = lvlScore;
             UpdateScore();
         }
 
@@ -211,6 +231,7 @@ namespace Player
             {
                 PlayerPrefs.SetInt("Score", score);
                 PlayerPrefs.SetInt("Lvl4StartScore", score);
+
             }
         }
 
