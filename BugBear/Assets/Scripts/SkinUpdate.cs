@@ -16,6 +16,7 @@ public class SkinUpdate : MonoBehaviour
 
     void Start()
     {
+        skinType = 1;
         original = GameObject.Find("Sprite_Original");
         tophat = GameObject.Find("Sprite_TopHat");
         swimsuit = GameObject.Find("Sprite_Swim");
