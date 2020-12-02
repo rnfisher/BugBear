@@ -16,7 +16,7 @@ public class SkinUpdate : MonoBehaviour
 
     void Start()
     {
-        skinType = 1;
+        
         original = GameObject.Find("Sprite_Original");
         tophat = GameObject.Find("Sprite_TopHat");
         swimsuit = GameObject.Find("Sprite_Swim");
@@ -50,19 +50,19 @@ public class SkinUpdate : MonoBehaviour
     void Update()
     {
         
-        if (skinType == 1) //original
+        if (skinType == 0) //original
         {
             original.SetActive(true);
             tophat.SetActive(false);
             swimsuit.SetActive(false);
         }
-        if (skinType == 2) //tophat
+        if (skinType == 1) //tophat
         {
             original.SetActive(false);
             tophat.SetActive(true);
             swimsuit.SetActive(false);
         }
-        if (skinType == 3) //swim
+        if (skinType == 2) //swim
         {
             original.SetActive(false);
             tophat.SetActive(false);
@@ -72,15 +72,15 @@ public class SkinUpdate : MonoBehaviour
     }
     public void SkinOriginal()
     {
-        skinType = 1;
+        skinType = 0;
     }
     public void SkinTopHat()
     {   
-        skinType = 2;
+        skinType = 1;
     }
     public void SkinSwim()
     {
     
-        skinType = 3;
+        skinType = 2;
     }
 }

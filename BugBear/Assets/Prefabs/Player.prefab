@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VariableHolder: {fileID: 0}
-  original: {fileID: 0}
-  tophat: {fileID: 0}
-  swimsuit: {fileID: 0}
+  original: {fileID: 7267573848195632345}
+  tophat: {fileID: 8538508950512174552}
+  swimsuit: {fileID: 7197561471648413162}
   skinType: 0
 --- !u!1 &7197561471648413162
 GameObject:
@@ -270,7 +270,9 @@ MonoBehaviour:
   fireRate: 0.25
   moveJoystick: {fileID: 0}
   enemy: []
+  enemyFollow: []
   splitShot: 0
+  splitShotOnTimer: 5
 --- !u!1 &7267573848195632345
 GameObject:
   m_ObjectHideFlags: 0
