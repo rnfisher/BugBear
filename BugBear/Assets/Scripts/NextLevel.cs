@@ -61,7 +61,7 @@ namespace Player
 
         private void SetText()
         {
-            nextSceneText.text = "Next Level: " + nextScene;
+            nextSceneText.text = nextScene;
             highScoreText.text = "High Score: " + highScore;
             scoreText.text = "Current Score: " + score;
         }
