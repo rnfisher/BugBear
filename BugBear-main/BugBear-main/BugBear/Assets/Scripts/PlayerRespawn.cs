@@ -10,6 +10,7 @@ namespace Player
         public static PlayerRespawn instance;
         private string currentScene;
         private string playerPrefsScene;
+        
 
         private void Awake()
         {
@@ -35,6 +36,8 @@ namespace Player
         {
             playerPrefsScene = PlayerPrefs.GetString("Scene");
             CanvasManager.instance.LoadSceneByName(playerPrefsScene);
+            // Sets Score back to what they had at the beginning of the level
+            GameController.instance.SetRespawnScore();
         }
     }
 }

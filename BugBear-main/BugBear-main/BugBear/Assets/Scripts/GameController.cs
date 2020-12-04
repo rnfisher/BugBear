@@ -45,9 +45,11 @@ namespace Player
         public Text scoreText;
         public int score;
         public int highScore;
-        public int neededPointsLvl1 = 100;
-        public int neededPointsLvl2 = 120;
-        public int neededPointsLvl3 = 300;
+        public int neededPointsLvl1 = 200;
+        public int neededPointsLvl2 = 400;
+        public int neededPointsLvl3 = 600;
+        private int lvlScore;
+        //private bool isLvl4ScoreSet;
 
         private void Awake()
         {
@@ -181,26 +183,55 @@ namespace Player
             scoreText.text = "Score: " + score;
         }
 
+        public void SetRespawnScore()
+        {
+            switch (currentScene)
+            {
+                case "Level 1":
+                    lvlScore = PlayerPrefs.GetInt("Lvl1StartScore");
+                    break;
+                case "Level 2":
+                    lvlScore = PlayerPrefs.GetInt("Lvl2StartScore");
+                    break;
+                case "Level 3":
+                    lvlScore = PlayerPrefs.GetInt("Lvl3StartScore");
+                    break;
+                case "Level 4 Endless":
+                    lvlScore = PlayerPrefs.GetInt("Lvl4StartScore");
+                    Debug.Log("Level 4 Score: " + lvlScore);
+                    break;
+                default:
+                    break;
+            }
+            score = lvlScore;
+            UpdateScore();
+        }
+
         private void NextLevelCheck()
         {
             if (score >= neededPointsLvl1 && currentScene == "Level 1")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl1StartScore", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (score >= neededPointsLvl2 && currentScene == "Level 2")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl2StartScore", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (score >= neededPointsLvl3 && currentScene == "Level 3")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl3StartScore", score);
                 CanvasManager.instance.LoadSceneByName("LvlTransition");
             }
             else if (currentScene == "Level 4 Endless")
             {
                 PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("Lvl4StartScore", score);
+
             }
         }
 
