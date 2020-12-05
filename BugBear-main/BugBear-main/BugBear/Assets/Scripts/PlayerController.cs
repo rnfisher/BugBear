@@ -32,7 +32,7 @@ namespace Player
         {
             instance = this;
             splitShot = false;
-        }
+    }
 
         private void Update()
         {
@@ -100,7 +100,7 @@ namespace Player
             {
                 other.gameObject.SetActive(false);
                 splitShot = true;
-            } 
+            }
         }
     }
 }

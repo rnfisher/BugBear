@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 637962378839599531, guid: 0f02a086b54703c43a5069b267df955e,
         type: 3}
       propertyPath: healthDepletionSpeed
-      value: 0.003
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 668188038177024520, guid: 0f02a086b54703c43a5069b267df955e,
         type: 3}
@@ -1124,6 +1124,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1739064048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7267573847219703394, guid: b0a7ef011077ef04daad7dd72475c674,
+    type: 3}
+  m_PrefabInstance: {fileID: 7267573847825682203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1852246897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1240,17 @@ PrefabInstance:
       propertyPath: moveJoystick
       value: 
       objectReference: {fileID: 213088993}
+    - target: {fileID: 7267573847219703396, guid: b0a7ef011077ef04daad7dd72475c674,
+        type: 3}
+      propertyPath: BubbleShield
+      value: 
+      objectReference: {fileID: 4552322769430469944, guid: b9ab6f584d496c34bbd64031be4980e4,
+        type: 3}
+    - target: {fileID: 7267573847219703396, guid: b0a7ef011077ef04daad7dd72475c674,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1739064048}
     - target: {fileID: 7267573847219703397, guid: b0a7ef011077ef04daad7dd72475c674,
         type: 3}
       propertyPath: m_LocalPosition.x
