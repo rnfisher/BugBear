@@ -14,19 +14,16 @@ namespace Player
         public GameObject food;
         public GameObject nuke;
         public GameObject split;
-        public GameObject shield;
         public GameObject enemyTwo;
         public Vector3 enemySpawnValues;
         public Vector3 foodSpawnValues;
         public Vector3 nukeSpawnValues;
         public Vector3 splitSpawnValues;
-        public Vector3 shieldSpawnValues;
         public Vector3 enemyTwoSpawnValues;
         public int enemyCount;
         public int foodCount;
         public int nukeCount;
         public int splitCount;
-        public int shieldCount;
         public int enemyTwoCount;
         public float enemySpawnWait;
         public float enemyStartWait;
@@ -40,9 +37,6 @@ namespace Player
         public float splitSpawnWait;
         public float splitStartWait;
         public float splitWaveWait;
-        public float shieldSpawnWait;
-        public float shieldStartWait;
-        public float shieldWaveWait;
         public float enemyTwoSpawnWait;
         public float enemyTwoStartWait;
         public float enemyTwoWaveWait;
@@ -73,7 +67,6 @@ namespace Player
             StartCoroutine(SpawnFoodWaves());
             StartCoroutine(SpawnnukeWaves());
             StartCoroutine(SpawnsplitWaves());
-            StartCoroutine(SpawnshieldWaves());
             StartCoroutine(SpawnEnemyTwoWaves());
         }
 
@@ -172,24 +165,6 @@ namespace Player
                 }
                 //Spawn Enemy Two
                 yield return new WaitForSeconds(enemyTwoWaveWait);
-                //Wait
-            }
-
-        }
-        IEnumerator SpawnshieldWaves()
-        {
-            yield return new WaitForSeconds(shieldStartWait);
-            while (true)
-            {
-                for (int i = 0, j = 0; i < shieldCount; i++)
-                {
-                    Vector3 shieldspawnPosition = new Vector3(Random.Range(-shieldSpawnValues.x, shieldSpawnValues.x), shieldSpawnValues.y, shieldSpawnValues.z);
-                    Quaternion shieldspawnRotation = Quaternion.identity;
-                    Instantiate(shield, shieldspawnPosition, shieldspawnRotation);
-                    yield return new WaitForSeconds(shieldSpawnWait);
-                }
-                //Spawn Shield Pickup
-                yield return new WaitForSeconds(shieldWaveWait);
                 //Wait
             }
 

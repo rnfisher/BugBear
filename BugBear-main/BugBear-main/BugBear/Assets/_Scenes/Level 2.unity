@@ -172,9 +172,9 @@ MonoBehaviour:
   foodSpawnWait: 1.5
   foodStartWait: 2
   foodWaveWait: 3.5
-  nukeSpawnWait: 7
-  nukeStartWait: 7
-  nukeWaveWait: 6
+  nukeSpawnWait: 5
+  nukeStartWait: 5
+  nukeWaveWait: 5
   splitSpawnWait: 5
   splitStartWait: 5
   splitWaveWait: 4
@@ -923,7 +923,7 @@ PrefabInstance:
     - target: {fileID: 668188038478443882, guid: 0f02a086b54703c43a5069b267df955e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20.100098
+      value: -20.099976
       objectReference: {fileID: 0}
     - target: {fileID: 668188038939606498, guid: 0f02a086b54703c43a5069b267df955e,
         type: 3}
