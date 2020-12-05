@@ -233,25 +233,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 608167976450484123, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+    - target: {fileID: 1970305764012280386, guid: 35a5c6d5c95a8154399d3eb9e503c805,
         type: 3}
-      propertyPath: m_FontData.m_FontStyle
-      value: 0
+      propertyPath: m_AnchoredPosition.y
+      value: 563.2
       objectReference: {fileID: 0}
-    - target: {fileID: 608167976450484123, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+    - target: {fileID: 1970305764012280386, guid: 35a5c6d5c95a8154399d3eb9e503c805,
         type: 3}
-      propertyPath: m_FontData.m_AlignByGeometry
-      value: 0
+      propertyPath: m_SizeDelta.y
+      value: 86.31001
       objectReference: {fileID: 0}
-    - target: {fileID: 608167976450484123, guid: 35a5c6d5c95a8154399d3eb9e503c805,
+    - target: {fileID: 4059435773354927072, guid: 35a5c6d5c95a8154399d3eb9e503c805,
         type: 3}
-      propertyPath: m_FontData.m_RichText
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 608167976450484123, guid: 35a5c6d5c95a8154399d3eb9e503c805,
-        type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 0
+      propertyPath: m_AnchoredPosition.y
+      value: -813
       objectReference: {fileID: 0}
     - target: {fileID: 5512975923367834894, guid: 35a5c6d5c95a8154399d3eb9e503c805,
         type: 3}

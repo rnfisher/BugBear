@@ -21,7 +21,7 @@ namespace Player
         public GameObject lvl3Background;
         public GameObject lvl4Background;
         private Button continueBtn;
-        public float continueBtnPause = 1f;
+        public float continueBtnPause = 2.5f;
 
         private void Awake()
         {
@@ -61,7 +61,7 @@ namespace Player
 
         private void SetText()
         {
-            nextSceneText.text = nextScene;
+            nextSceneText.text = "Next Level: " + nextScene;
             highScoreText.text = "High Score: " + highScore;
             scoreText.text = "Current Score: " + score;
         }
